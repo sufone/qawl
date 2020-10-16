@@ -1,0 +1,11 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+  Albert Sunyer -- Freelance web & app developer -- @nye
+
+
+# TECHNOLOGY COLOPHON
+
+  HTML5, CSS3, JS, Svelte, Electron

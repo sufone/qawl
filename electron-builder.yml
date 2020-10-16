@@ -1,0 +1,39 @@
+productName: "qawl-v2"
+appId: "com.navedislam.qawl"
+copyright: "Copyright © 2020 Naved Islam"
+
+# Package app code into a asar archive. Set to false to debug issues.
+asar: true
+
+# # Mac OS configuration
+# mac:
+#   icon: "public/img/icon.icns"
+#   category: "public.app-category.utilities"
+
+# # Config for OSX dmg
+# dmg:
+#   contents:
+#     - x: 130
+#       y: 220
+#     - x: 410
+#       y: 220
+#       type: "link"
+#       path: "/Applications"
+
+# # Windows configuration
+# win:
+#   icon: "public/img/icon.ico"
+#   target:
+#     - "zip"
+#     - "nsis"
+
+# # Config for the windows installer
+# nsis:
+#   oneClick: true
+#   perMachine: true
+
+# Linux configuration
+linux:
+  category: Education
+  target:
+    - deb

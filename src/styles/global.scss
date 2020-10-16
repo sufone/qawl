@@ -1,0 +1,91 @@
+@import "fonts";
+@import "vars";
+@import "normalize";
+@import "stuff";
+
+@-ms-viewport {
+	width: device-width;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body, html {
+	height: 100%;
+	width: 100%;
+}
+
+html{
+	box-sizing: border-box;
+	-ms-overflow-style: scrollbar;
+	font-size: 15px;
+}
+
+body {
+	//-webkit-font-smoothing: antialiased;
+	-webkit-backface-visibility: hidden;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	font-kerning: normal;
+	font-feature-settings: "kern" 1, "liga" 1, "ss01" 1, 'ss03' 1, "calt" 1, 'tnum' 1, 'frac' 1;
+	letter-spacing: -0.009em;
+
+	font-family: var(--font-family);
+	font-size: 1rem;
+	min-height: 100vh;
+	color: var(--body-color);
+	background-color: #fff;
+}
+
+@supports (font-variation-settings: normal) {
+	html { font-family: 'Inter UI var alt', Helvetica, Arial, sans-serif; }
+}
+
+h1, h2, h2, h4{
+	font-family: var(--font-family);
+	font-weight: 500;
+	letter-spacing: -0.04em;
+}
+
+h1{
+	font-size: 1.9rem;
+	line-height: 80%;
+}
+
+// Styles for links on Electron apps (hide pointer cursor, etc)
+:not(input):not(textarea),
+:not(input):not(textarea)::after,
+:not(input):not(textarea)::before {
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+input, button, textarea, :focus {
+    outline: none !important; // You should add some other style for :focus to help UX/a11y
+}
+a:not([draggable=true]), img:not([draggable=true]) {
+    -webkit-user-drag: none;
+    user-drag: none; /* Technically not supported in Electron yet */
+}
+a[href^="http://"],
+a[href^="https://"],
+a[href^="ftp://"],
+a[href^="file://"] {
+    -webkit-user-drag: auto;
+    user-drag: auto; /* Technically not supported in Electron yet */
+}
+/////////////////
+
+a{
+	text-decoration: none;
+	color: var(--blue);
+	transition: color 400ms var(--cubic-bezier);
+
+	&:hover, &:focus {
+		color: var(--hover);
+		text-decoration: none;
+		transition: color 150ms var(--cubic-bezier);
+	}
+}
