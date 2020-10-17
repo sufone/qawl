@@ -1,9 +1,15 @@
 <script>
-    import {pageRight} from '../stores/page.js'
+    import {pageLeft} from '../stores/page.js'
+
+    
 </script>
 
 <div>
-    <p>Current page: {$pageRight}</p>
-    <button on:click={pageRight.increment}>Next page</button>
-    <button on:click={pageRight.decrement}>Previous page</button>
+    <span>Current page: <input bind:value="{$pageLeft}"> </span>
+    {#if $pageLeft < 603}
+        <button on:click={pageLeft.increment}>Next page</button>
+    {:else}
+        <button disabled>Next page</button>
+    {/if}
+    <button on:click={pageLeft.decrement}>Previous page</button>
 </div>
