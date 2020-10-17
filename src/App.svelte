@@ -7,6 +7,7 @@
 
 	import GlobalStyles from './styles/GlobalStyles.svelte';
 	import Page from './components/Page.svelte'
+import Toolbar from './components/Toolbar.svelte';
 
 	// LOADING //////////////////////////
 
@@ -29,6 +30,7 @@
 <div class="wrapper">
 
 	<Page />
+	<Toolbar />
 
 	<Router/>
 </div>
