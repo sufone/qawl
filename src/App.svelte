@@ -6,7 +6,6 @@
 	import { isLoading } from './stores/ui';
 
 	import GlobalStyles from './styles/GlobalStyles.svelte';
-	import Topbar from './components/Topbar.svelte';
 	import Page from './components/Page.svelte'
 
 	// LOADING //////////////////////////
@@ -28,7 +27,6 @@
 
 
 <div class="wrapper">
-	<Topbar/>
 
 	<Page />
 
