@@ -6,8 +6,8 @@
 
 <div>
 
-    <img alt="Page {$pageLeft} of the Madina mushaf" src="../public/mushaf/{$pageLeft}.svg" />
-    <img alt="Page {pageRight} of the Madina mushaf" src="../public/mushaf/{pageRight}.svg" />
+    <img alt="Page {$pageLeft} of the Madina mushaf" src="../public/mushaf/{$pageLeft}.png" />
+    <img alt="Page {pageRight} of the Madina mushaf" src="../public/mushaf/{pageRight}.png" />
     
 </div>
 
@@ -15,6 +15,9 @@
 div {
     display: flex;
     flex-direction: row;
+}
+img {
+    max-width: 400px;
 }
 
 </style>
