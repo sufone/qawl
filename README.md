@@ -6,3 +6,4 @@ Feel free to email me if you are interested in contributing right now, before th
 
 Old version: https://github.com/mr-islam/qawl
 
+Sorry this readme is bad, making it public quickly in case people want to contribute early ♥
