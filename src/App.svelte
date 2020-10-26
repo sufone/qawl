@@ -36,7 +36,7 @@ import Toolbar from './components/Toolbar.svelte';
 </div>
 
 
-<style lang="scss">
+<style>
 	.wrapper{
 		display: flex;
 		flex-direction: column;
