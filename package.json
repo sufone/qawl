@@ -43,10 +43,12 @@
     "dev": "run-p start:dev autobuild",
     "start": "sirv public --single",
     "start:dev": "sirv public --single --dev",
+
     "electron": "run-s build pure-electron",
     "electron-dev": "run-p autobuild pure-electron-dev",
     "dist-darwin": "run-s build pure-dist-darwin",
     "dist-deb": "run-s build pure-dist-deb",
+
     "pure-electron": "electron .",
     "pure-electron-dev": "cross-env NODE_ENV=development electron .",
     "pure-dist-darwin": "electron-builder --dir --mac --config electron-builder.yml",
