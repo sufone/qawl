@@ -1,38 +1,11 @@
-My starter to built Electron apps with Svelte.
+WIP Qawl v2
 
-* Electron  
-* Svelte  
-* Rollup.js  
-* Preprocess (svelte-preprocess) for SCSS in components and globally  
-* Live reload  
-* Router (with hash routing)  
-* Some Electron optimizations (Icons, platform install options, Remember window size and position, Confirm before quit if `DocumentEdited`, Save app settings, [InterUI](https://rsms.me/inter/) font, ...)  
+See this issue for the development plan: https://github.com/mr-islam/qawl-svelte/issues/1
 
+Feel free to email me if you are interested in contributing right now, before the foundation is done: navedcoded@gmail.com . Sorry if things are a bit messy, but I recommend checking this repo out a few weeks later!
 
-## Get started
+Use the scripts `electron-dev` and `pure-dist`, others are there from a template still.
 
-Install the dependencies...
+Old version: https://github.com/mr-islam/qawl
 
-```bash
-cd svelte-electron-starter
-npm install
-```
-
-...then start [Rollup](https://rollupjs.org):
-
-```bash
-npm run dev
-```
-
-Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
-
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
-
-
-... open with electron:
-
-```bash
-npm run electron-dev
-```
-
-See `packacge.json` scripts for other build options
+Sorry this readme is bad, making it public quickly in case people want to contribute early ♥
