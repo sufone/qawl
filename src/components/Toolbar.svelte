@@ -1,7 +1,7 @@
 <script>
     import {pageLeft} from '../stores/page.js'
-    import surahs from '../surahs.js'
-    console.log(surahs)
+
+    import Select from './Select.svelte'
 
     function checkPage() {
     let input = document.getElementById("pageNumberInput").value
@@ -42,4 +42,6 @@
     {:else}
         <button disabled>Previous page</button>
     {/if}
+
+    <Select/>
 </div>
