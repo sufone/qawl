@@ -1,7 +1,7 @@
 var surahs = [
 	{
 		"name": "al-Fātihah",
-		"pageGreen": 1
+		"pageGreen": 1 //named like this because it's from the green madina mushaf
 	},
 	{
 		"name": "al-Baqarah",
