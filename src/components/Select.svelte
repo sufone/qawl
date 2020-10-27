@@ -1,30 +1,30 @@
 <script>
-import surahs from '../surahs.js'
-import { onMount } from 'svelte';
-import {pageLeft} from '../stores/page.js'
-import checkPage from '../checkPage.js';
+	import surahs from '../surahs.js'
+	import {pageLeft} from '../stores/page.js'
+	import checkPage from '../checkPage.js';
 
-onMount(async () => { //so it's not run before elements are rendered
-	var ele = document.getElementById("surahSelect");
-    for (let i = 0; i < surahs.length; i++) {
-		console.log(surahs[i]['pageGreen'])
+	let selected
+	let selectedSurah
+	$: { // only sets
+		console.log(selected)
+		for (let i = surahs.length - 1; i >= 0; i--) {
+			if (selected < surahs[i]['pageGreen']) {
+				console.log(surahs[i-1]['name'])
+				selectedSurah = surahs[i-1]['pageGreen']
+			}
+		}
+		pageLeft.set(checkPage(selectedSurah))
 
-        ele.innerHTML = ele.innerHTML +
-            '<option value="' + surahs[i]['pageGreen'] + '">' +
-            parseInt(i+1) + '. ' + surahs[i]['name'] + '</option>';
-    }
-});
+	}
 
-function updatePage() {
-	var selectedSurah = parseInt(document.getElementById("surahSelect").value);
-	pageLeft.set(checkPage(selectedSurah));
-}
+	</script>
 
-</script>
-
-<select id="surahSelect" on:change="{() => {updatePage()}}"></select>
-
-
-<style>
-
-</style>
+<form id="selectForm" >
+	<select id="surahSelect" bind:value={$pageLeft} >
+		{#each surahs as surah}
+			<option value={surah.pageGreen}>
+				{surah.name}
+			</option>
+		{/each}
+	</select>
+</form>
