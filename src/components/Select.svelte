@@ -1,7 +1,11 @@
 <script>
+	//TODO: Next steps to fix this
+	//instead of directly binding the select to the store, instead have an intermediary var
+	//select on:blur can set inputPage directly
+	//and a $: reactive script can check $inputPage against surahs.js, and set intermediatery var to be like that (so the select also changes with it)
+
 	import surahs from '../surahs.js'
-	import {pageLeft} from '../stores/page.js'
-	import checkPage from '../checkPage.js';
+	import {inputPage} from '../stores/page.js'
 
 	let selected
 	let selectedSurah
@@ -13,14 +17,14 @@
 				selectedSurah = surahs[i-1]['pageGreen']
 			}
 		}
-		pageLeft.set(checkPage(selectedSurah))
+		inputPage.set((selectedSurah))
 
 	}
 
 	</script>
 
 <form id="selectForm" >
-	<select id="surahSelect" bind:value={$pageLeft} >
+	<select id="surahSelect" bind:value={$inputPage} >
 		{#each surahs as surah}
 			<option value={surah.pageGreen}>
 				{surah.name}
