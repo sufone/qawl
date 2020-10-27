@@ -2,28 +2,16 @@
     import {pageLeft} from '../stores/page.js'
 
     import Select from './Select.svelte'
-
-    function checkPage() {
-    let input = document.getElementById("pageNumberInput").value
-    blankField()
-    if (input < 605 && input > 0) { // ensures possible page
-        if (input % 2 === 0) { // even page can be set directly
-			return input
-		} else { // odd page processed to facing even page
-			return input - -1
-		}
-	} else {
-        //prompt user that page is outside the Quran
-    }
+    import checkPage from '../checkPage.js'
 
     function blankField() {
         document.getElementById("pageNumberInput").value = ''
     }
-}
+
 </script>
 
 <div>
-    <form id="pageForm" on:submit|preventDefault={() => {console.log('submit'); pageLeft.set(checkPage());}}>
+    <form id="pageForm" on:submit|preventDefault={() => {console.log('submit'); pageLeft.set(checkPage(document.getElementById("pageNumberInput"))); blankField();}}>
         Current page: <input type="number" name="pageNumberInput"
             id="pageNumberInput" placeholder="{$pageLeft}" max="604" min="1" title="Directly go to page…">
     </form>

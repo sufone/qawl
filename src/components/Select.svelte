@@ -2,6 +2,7 @@
 import surahs from '../surahs.js'
 import { onMount } from 'svelte';
 import {pageLeft} from '../stores/page.js'
+import checkPage from '../checkPage.js';
 
 let page = parseInt($pageLeft)
 
@@ -18,7 +19,7 @@ onMount(async () => { //so it's not run before elements are rendered
 
 function updatePage() {
 	var selectedSurah = parseInt(document.getElementById("surahSelect").value);
-	pageLeft.set(selectedSurah);
+	pageLeft.set(checkPage(selectedSurah));
 }
 
 </script>
