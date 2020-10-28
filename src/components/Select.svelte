@@ -1,15 +1,16 @@
 <script>
 
 	import surahs from '../surahs.js'
-	import {inputPage} from '../stores/page.js'
+	import {inputPage, currentSurah} from '../stores/page.js'
 
 	let selectVal
 
-	$: if ($inputPage) {
+	$: if ($inputPage) { // TODO: this code should be part of the store? derived? important overall info
 		console.log($inputPage)
 		for (let i = surahs.length - 1; i >= 0; i--) {
 			if ($inputPage < surahs[i]['pageGreen']) {
 				selectVal = surahs[i-1]['pageGreen']
+				currentSurah.set(i)
 			}
 		}
 	}
