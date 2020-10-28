@@ -9,7 +9,6 @@
 		console.log($inputPage)
 		for (let i = surahs.length - 1; i >= 0; i--) {
 			if ($inputPage < surahs[i]['pageGreen']) {
-				console.log(surahs[i-1]['name'])
 				selectVal = surahs[i-1]['pageGreen']
 			}
 		}
