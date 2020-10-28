@@ -1,6 +1,6 @@
 <script>
 
-	import surahs from '../surahs.js'
+	import { surahs } from '../surahs.svelte'
 	import {inputPage, currentSurah} from '../stores/page.js'
 
 	let selectVal

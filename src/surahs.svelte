@@ -1,4 +1,5 @@
-var surahs = [
+<script context="module">
+	export const  surahs = [
 	{
 		"name": "al-Fātihah",
 		"pageGreen": 1 // named like this because it's from the green madina mushaf
@@ -457,4 +458,4 @@ var surahs = [
 	}
 ]
 
-export default surahs
+</script>
