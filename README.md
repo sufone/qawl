@@ -4,7 +4,7 @@ See this issue for the development plan: https://github.com/mr-islam/qawl-svelte
 
 Feel free to email me if you are interested in contributing right now, before the foundation is done: navedcoded@gmail.com . Sorry if things are a bit messy, but I recommend checking this repo out a few weeks later!
 
-Use the scripts `electron-dev` and `pure-dist`, others are there from a template still.
+Use the node scripts `electron-dev` and `pure-dist`, others are there from a template still (to be removed later). I prefer yarn to use yarn so that's the lockfile here.
 
 Old version: https://github.com/mr-islam/qawl
 
