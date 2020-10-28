@@ -29,10 +29,8 @@
 
 <div class="wrapper">
 
-	<Page />
-	<Toolbar />
+		<Router/>
 
-	<Router/>
 </div>
 
 

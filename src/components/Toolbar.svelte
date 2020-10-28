@@ -10,4 +10,6 @@
     <Buttons/>
 
     <Select/>
+
+    <a href="#/settings">Settings</a>
 </div>

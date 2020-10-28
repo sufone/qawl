@@ -1,11 +1,12 @@
 <script>
-	import Hello from './../components/Hello.svelte';
+	import Page from './../components/Page.svelte'
+	import Toolbar from './../components/Toolbar.svelte'
 </script>
 
 
 <main>
-	<h1>Home</h1>
-	<Hello />
+	<Page />
+	<Toolbar />
 </main>
 
 

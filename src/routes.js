@@ -1,10 +1,12 @@
 import { routes } from 'svelte-hash-router'
 
-import Home from './pages/Home.svelte';
+import App from './pages/Home.svelte';
+import Settings from './pages/Settings.svelte'
 import NotFound from './pages/NotFound.svelte';
 
 routes.set({
-	'/': Home,
+	'/': App,
+	'/settings': Settings,
 	'*': NotFound
 });
 
