@@ -15,8 +15,4 @@
 		width: 100%;
 		padding: 20px;
 	}
-
-	h1{
-		margin-top: 0;
-	}
 </style>
