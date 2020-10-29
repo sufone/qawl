@@ -6,3 +6,5 @@ const settings = {
 }
 
 export const settingsStore = writable(settings);
+
+export const zoomStore = writable(100)

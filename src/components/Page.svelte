@@ -8,14 +8,19 @@
             left = $inputPage
             right = $inputPage - 1
         } else {
-            left=  $inputPage + 1
+            left =  $inputPage + 1
             right = $inputPage
         }
     }
 
+    import {zoomStore} from '../stores/settings.js'
+
+    $: zoom = $zoomStore + '%'
+    // export let zoom = "40%"
+
 </script>
 
-<div>
+<div id="wrapper" style="--zoom: {zoom}">
 
     <img alt="Page {left} of the Madina mushaf" src="../public/mushaf/{left}.png" />
     <img alt="Page {right} of the Madina mushaf" src="../public/mushaf/{right}.png" />
@@ -25,10 +30,21 @@
 <style>
 div {
     display: flex;
-    flex-direction: row;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+	max-width: var(--zoom);
+	margin-right: auto;
+	margin-left: auto;
+	transition: max-width 100ms ease;
+	margin-top: 100px;
+	margin-bottom: 50px;
 }
 img {
-    max-width: 400px;
+    max-width: 50%;
+	height: auto;
+	background-color: transparent;
+	border: none;
 }
 
 </style>
