@@ -12,10 +12,16 @@
 	}
 </script>
 
-Zoom: {$zoomStore}
+<div>
+	<button on:click={() => {zoomVal += 10}}>Zoom in</button>
+	<input id="slider" type=range bind:value={zoomVal} min=40 max=100>
+	<button on:click={() => {zoomVal -= 10}}>Zoom out</button>
+</div>
 
-<input id="slider" type=range bind:value={zoomVal} min=40 max=100>
 
+<style>
+	input {
+		direction: rtl;
+	}
 
-<button on:click={() => {zoomVal += 10}}>Zoom in</button>
-<button on:click={() => {zoomVal -= 10}}>Zoom out</button>
+</style>

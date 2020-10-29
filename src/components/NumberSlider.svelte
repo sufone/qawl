@@ -17,9 +17,6 @@
 
 <input id="slider" type=range bind:value={page} min=1 max=604>
 
-Current page: <input type="number" name="pageNumberInput" bind:value={page}
-	id="pageNumberInput" max="604" min="1" title="Directly go to page…">
-
 <style>
 	#slider {
 		direction: rtl;

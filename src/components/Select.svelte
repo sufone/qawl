@@ -17,7 +17,6 @@
 
 </script>
 
-<form id="selectForm" >
 	<select id="surahSelect" bind:value={selectVal} on:change={() => {inputPage.set(selectVal)}} >
 		{#each surahs as surah}
 			<option value={surah.pageGreen}>
@@ -25,4 +24,3 @@
 			</option>
 		{/each}
 	</select>
-</form>

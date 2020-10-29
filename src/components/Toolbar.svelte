@@ -6,16 +6,34 @@
     import Zoom from './ButtonsZoom.svelte'
 </script>
 
-<div>
+<div id="toolbar-main">
+
     <NumberSlider/>
 
-    <Buttons/>
+    <div id="toolbar-minor">
+        <Select/>
 
-    <Select/>
+        <Buttons/>
 
-    <Hyperlink/>
+        <Hyperlink/>
 
-    <a href="#/settings">Settings</a>
 
-    <Zoom />
+        <Zoom />
+        <a href="#/settings">Settings</a>
+
+    </div>
+
+
 </div>
+
+<style>
+    div#toolbar-main {
+        display: flex;
+        flex-direction: column;
+    }
+    div#toolbar-minor {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+</style>
