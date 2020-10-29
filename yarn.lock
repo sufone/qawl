@@ -3440,6 +3440,11 @@ svelte-hash-router@^1.0.1:
   dependencies:
     url-pattern "^1.0.3"
 
+svelte-persistent-store@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/svelte-persistent-store/-/svelte-persistent-store-0.1.4.tgz#6119e9679e5cfd9e6a65fbf39681fd9aec42cdc1"
+  integrity sha512-QU7R9SHJ7WLS4WhZG+3NonQSaINKv7tNyd9LrQeN6L1o1vlFeEAhVLzOcypOUuKTRZ6JYSe4+dC7fQkzPg8+2Q==
+
 svelte-preprocess@^3.3.0:
   version "3.9.12"
   resolved "https://registry.yarnpkg.com/svelte-preprocess/-/svelte-preprocess-3.9.12.tgz#21e8452e45c6a4d89df37a38714af4a0186df3a1"

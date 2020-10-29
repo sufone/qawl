@@ -15,7 +15,8 @@
   "main": "./src/electron.js",
   "dependencies": {
     "electron-is-dev": "^1.1.0",
-    "electron-settings": "^3.2.0"
+    "electron-settings": "^3.2.0",
+    "svelte-persistent-store": "^0.1.4"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.3",
