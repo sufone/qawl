@@ -1,6 +1,6 @@
 <script>
     import Select from './Select.svelte'
-    import Buttons from './Buttons.svelte'
+    import Buttons from './ButtonsPage.svelte'
     import NumberSlider from './NumberSlider.svelte'
     import Hyperlink from './Hyperlink.svelte'
 </script>
