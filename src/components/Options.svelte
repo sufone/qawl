@@ -2,7 +2,7 @@
 	import { settingsStore } from "../stores/settings"
 </script>
 
-<a href="#/">Back to Quran</a>
+<p>Choose your online reference provider:</p>
 
 <select bind:value={$settingsStore.hyperlinkProvider}>
 	<option disabled> - English - </option>
@@ -13,3 +13,7 @@
 	<option value="https://tafsir.app/">Tafsir.app</option>
 	<option value="https://www.altafsir.com/Tafasir.asp?tMadhNo=1&tTafsirNo=7&tSoraNo=">Altafsir.org - Ibn Katheer</option>
 </select>
+
+
+
+<p><a href="#/">Back to Quran</a></p>
