@@ -11,16 +11,12 @@
     <NumberSlider/>
 
     <div id="toolbar-minor">
-        <Select/>
 
-        <Buttons/>
-
-        <Hyperlink/>
-
-
-        <Zoom />
         <a href="#/settings">Settings</a>
-
+        <Zoom />
+        <Buttons/>
+        <Select/>
+        <Hyperlink/>
     </div>
 
 

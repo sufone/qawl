@@ -18,7 +18,7 @@
 	let page
 </script>
 
-
+<div>
 <!-- To prevent button after max page -->
 {#if $inputPage < 603}
   <button on:click={increment}>Next page</button>
@@ -35,3 +35,11 @@
 {:else}
   <button disabled>Previous page</button>
 {/if}
+</div>
+
+<style>
+	div {
+		display: flex;
+		flex-direction: row;
+	}
+</style>
