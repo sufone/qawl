@@ -1,17 +1,17 @@
 <script>
 	import { currentSurah } from "../stores/page";
-	import {settingsStore} from "../stores/settings"
+	import {hyperlinkProvider} from "../stores/settings"
 
 	let suffix = "/"
 
 	function open() {
-		let URL = $settingsStore.hyperlinkProvider + $currentSurah + suffix
+		let URL = $hyperlinkProvider + $currentSurah + suffix
 		console.log(URL)
 		window.open(URL, '_blank')
 	}
 
-	$: if ($settingsStore.hyperlinkProvider) { //not pretty, but needs to be handled.
-		switch ($settingsStore.hyperlinkProvider) {
+	$: if ($hyperlinkProvider) { //not pretty, but needs to be handled. maybe move to a derived store?
+		switch ($hyperlinkProvider) {
 			case "https://www.quran.com/":
 				suffix = "/";
 				break

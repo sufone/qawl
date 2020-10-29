@@ -1,10 +1,6 @@
-import { writable } from 'svelte/store';
+import { writable, readable, derived } from 'svelte-persistent-store/dist/local';
 
 
-const settings = {
-	hyperlinkProvider: "https://quran.com/",
-}
+export const hyperlinkProvider = writable("hyperlinkProvider", "https://quran.com/");
 
-export const settingsStore = writable(settings);
-
-export const zoomStore = writable(100)
+export const zoomStore = writable("zoomStore", 100)
