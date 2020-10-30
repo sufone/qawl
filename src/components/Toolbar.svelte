@@ -18,7 +18,7 @@
         };
     }
 
-    onInactive(1000, function () {
+    onInactive(3000, function () {
         console.log(readyToShow)
         if (readyToShow === true) {
             return;
