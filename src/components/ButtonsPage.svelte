@@ -42,4 +42,16 @@
 		display: flex;
 		flex-direction: row;
 	}
+	input {
+		text-align: center;
+		background-color: transparent;
+		color: white;
+		border: none;
+	}
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+	}
+
 </style>
