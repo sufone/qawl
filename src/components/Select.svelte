@@ -25,3 +25,15 @@
 		</option>
 	{/each}
 </select>
+
+<style>
+	select {
+		background-color: transparent;
+		color: white;
+		all:unset;
+        border-radius: 2px;
+		border: solid white 1px;
+        padding: 5px;
+        margin: 1px;
+	}
+</style>

@@ -64,6 +64,14 @@
 </div>
 
 <style>
+    :global(button, a) {
+        all:unset;
+        border-radius: 2px;
+        color: white;
+        border: solid white 1px;
+        padding: 5px;
+        margin: 1px;
+    }
     div#toolbar-main {
         display: flex;
         flex-direction: column;
@@ -82,8 +90,8 @@
 
         background:rgba(0, 0, 0, 0.5);
         z-index: 2;
-        backdrop-filter: blur(5px);
-        padding: 10px;
+        backdrop-filter: blur(7px);
+        padding: 15px;
         border-radius: 4px;
 
     }
@@ -91,5 +99,10 @@
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
+        padding: 5px 0 5px 0;
+    }
+    a {
+        color: white;
+        text-decoration: none;
     }
 </style>
