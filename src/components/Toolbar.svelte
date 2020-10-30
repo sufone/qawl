@@ -4,6 +4,44 @@
     import NumberSlider from './NumberSlider.svelte'
     import Hyperlink from './Hyperlink.svelte'
     import Zoom from './ButtonsZoom.svelte'
+    import {onMount} from 'svelte'
+
+    function onInactive(ms, cb) {
+        var wait = setTimeout(cb, ms);
+        document.onmousemove = document.mousedown = document.mouseup = document.onkeydown =
+        document.onkeyup = document.focus = document.ontouchstart = document.onclick =
+        document.onkeypress = function () {
+            clearTimeout(wait);
+            document.getElementById("toolbar-main").style.opacity = 1;
+            document.body.style.cursor = "pointer";
+            wait = setTimeout(cb, ms);
+        };
+    }
+
+    onInactive(1000, function () {
+        console.log(readyToShow)
+        if (readyToShow === true) {
+            return;
+        } else if (neverHide === false) {
+            document.getElementById("toolbar-main").style.opacity = 0;
+            document.body.style.cursor = "none";
+        }
+    });
+
+    let readyToShow; //so if mouse is resting on footer, it'll keep showing
+
+    onMount(async () => {
+        document.getElementById("toolbar-main").addEventListener("mouseover", function() {readyToShow=true;});
+        document.getElementById("toolbar-main").addEventListener("mouseout", function() {readyToShow=false;});
+    });
+
+    let neverHide = false //maybe this should be a setting to set permanently?
+
+    function toggleHide() {
+        neverHide = !neverHide
+        console.log(neverHide)
+    }
+
 </script>
 
 <div id="toolbar-main">
@@ -17,6 +55,8 @@
         <Buttons/>
         <Select/>
         <Hyperlink/>
+        <button on:click={toggleHide}>Pin Toolbar</button>
+
     </div>
 
 
@@ -42,7 +82,7 @@
         background:rgba(0, 0, 0, 0.5);
         z-index: 2;
         backdrop-filter: blur(5px);
-        padding: 5px;
+        padding: 10px;
         border-radius: 4px;
 
     }
