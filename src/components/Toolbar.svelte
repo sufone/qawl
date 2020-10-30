@@ -31,8 +31,9 @@
     let readyToShow; //so if mouse is resting on footer, it'll keep showing
 
     onMount(async () => {
-        document.getElementById("toolbar-main").addEventListener("mouseover", function() {readyToShow=true;});
-        document.getElementById("toolbar-main").addEventListener("mouseout", function() {readyToShow=false;});
+        let toolbar = document.getElementById("toolbar-main")
+        toolbar.addEventListener("mouseover", function() {readyToShow=true;});
+        toolbar.addEventListener("mouseout", function() {readyToShow=false;});
     });
 
     let neverHide = false //maybe this should be a setting to set permanently?
