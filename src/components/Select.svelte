@@ -17,6 +17,7 @@
 
 </script>
 
+<!-- svelte-ignore a11y-no-onchange -->
 <select id="surahSelect" bind:value={selectVal} on:change={() => {inputPage.set(selectVal)}} >
 	{#each surahs as surah, i}
 		<option value={surah.pageGreen}>
