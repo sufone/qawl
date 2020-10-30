@@ -17,10 +17,10 @@
 
 </script>
 
-	<select id="surahSelect" bind:value={selectVal} on:change={() => {inputPage.set(selectVal)}} >
-		{#each surahs as surah}
-			<option value={surah.pageGreen}>
-				{surah.name}
-			</option>
-		{/each}
-	</select>
+<select id="surahSelect" bind:value={selectVal} on:change={() => {inputPage.set(selectVal)}} >
+	{#each surahs as surah, i}
+		<option value={surah.pageGreen}>
+			{i+1}. {surah.name}
+		</option>
+	{/each}
+</select>
