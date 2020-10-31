@@ -86,9 +86,11 @@
     :global(.btn) {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 	padding: 1rem 2rem;
-	background-color: #333;
+	/* background-color: #999; */
+    background: none;
 	color: #fff;
 	border: 0;
+
 
 	transition: all 200ms ease;
     }
@@ -136,7 +138,7 @@
     div#toolbar-minor {
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: center;
         padding: 5px 0 5px 0;
     }
     a {
