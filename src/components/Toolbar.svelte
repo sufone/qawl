@@ -5,6 +5,8 @@
     import Hyperlink from './Hyperlink.svelte'
     import Zoom from './ButtonsZoom.svelte'
     import {onMount} from 'svelte'
+    import { FluentRevealEffect } from "fluent-reveal-effect"
+
 
     function onInactive(ms, cb) {
         var wait = setTimeout(cb, ms);
@@ -34,6 +36,19 @@
         let toolbar = document.getElementById("toolbar-main")
         toolbar.addEventListener("mouseover", function() {readyToShow=true;});
         toolbar.addEventListener("mouseout", function() {readyToShow=false;});
+
+        FluentRevealEffect.applyEffect(".effect-group-container", {
+            clickEffect: true,
+            lightColor: "rgba(255,255,255,0.6)",
+            gradientSize: 80,
+            isContainer: true,
+            children: {
+                borderSelector: ".btn-border",
+                elementSelector: ".btn",
+                lightColor: "rgba(255,255,255,0.3)",
+                gradientSize: 150
+            }
+        })
     });
 
     let neverHide = false //maybe this should be a setting to set permanently?
@@ -45,18 +60,22 @@
 
 </script>
 
-<div id="toolbar-main">
+<div id="toolbar-main" >
 
     <NumberSlider/>
 
-    <div id="toolbar-minor">
+    <div id="toolbar-minor" class="effect-group-container">
 
-        <a href="#/settings">Settings</a>
+        <div class="btn-border">
+            <a class="btn" href="#/settings">Settings</a>
+        </div>
         <Zoom />
         <Buttons/>
         <Select/>
         <Hyperlink/>
-        <button on:click={toggleHide}>Pin Toolbar</button>
+        <div class="btn-border">
+            <button class="btn" on:click={toggleHide}>Pin</button>
+        </div>
 
     </div>
 
@@ -64,14 +83,24 @@
 </div>
 
 <style>
-    :global(button, a) {
-        all:unset;
-        border-radius: 2px;
-        color: white;
-        border: solid white 1px;
-        padding: 5px;
-        margin: 1px;
+    :global(.btn) {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+	padding: 1rem 2rem;
+	background-color: #333;
+	color: #fff;
+	border: 0;
+
+	transition: all 200ms ease;
     }
+    :global(.btn-border) {
+        display: inline-block;
+        margin: 5px;
+    }
+    :global(.btn-border .btn) {
+        display: block;
+        margin: 2px;
+    }
+
     div#toolbar-main {
         display: flex;
         flex-direction: column;

@@ -31,4 +31,6 @@
 	}
 </script>
 
-<button on:click={open}>Open This Surah Online</button>
+<div class="btn-border">
+	<button class="btn" on:click={open}>More</button>
+</div>
