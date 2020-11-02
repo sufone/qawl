@@ -20,5 +20,6 @@
 <style>
 	#slider {
 		direction: rtl;
+		padding: 5px;
 	}
 </style>
