@@ -12,9 +12,12 @@
 	}
 </script>
 
-<button class="btn" on:click={() => {zoomVal += 10}}>+</button>
-<input class="btn" id="slider" type=range bind:value={zoomVal} min=40 max=100>
-<button class="btn" on:click={() => {zoomVal -= 10}}>-</button>
+<div>
+	<button class="btn" on:click={() => {zoomVal += 10}}>+</button>
+	<input class="btn" id="slider" type=range bind:value={zoomVal} min=40 max=100>
+	<button class="btn" on:click={() => {zoomVal -= 10}}>-</button>
+</div>
+
 
 <style>
 	input {

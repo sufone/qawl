@@ -51,7 +51,7 @@
 
     <div id="toolbar-minor" class="effect-group-container">
 
-            <a class="btn" href="#/settings">Settings</a>
+        <a class="btn" href="#/settings">Settings</a>
         <Zoom />
         <Buttons/>
         <Select/>
@@ -64,17 +64,7 @@
 </div>
 
 <style>
-    :global(.btn) {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-        padding: 0.5rem 1rem;
-        background-color: rgba(0,0,0,0);
-        /* background: none; */
-        color: #fff;
-        border: 0;
-        border-radius: 100px;
-        transition: all 200ms ease;
-        border-radius: 100px;
-    }
+    /* see .btn styles in GlobalStyles.svelte */
     div#toolbar-main {
         display: flex;
         flex-direction: column;
@@ -110,11 +100,10 @@
     div#toolbar-minor {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-around;
         padding: 5px 0 5px 0;
     }
     a {
-        color: white;
         text-decoration: none;
     }
 </style>

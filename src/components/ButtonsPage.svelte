@@ -19,6 +19,8 @@
 
 </script>
 
+<div>
+
 <!-- To prevent button after max page -->
 {#if $inputPage < 603}
 <button class="btn" on:click={increment}>←</button>
@@ -26,7 +28,7 @@
 <button class="btn" disabled>←</button>
 {/if}
 
-<input class="btn" type="number" name="pageNumberInput" bind:value={page}
+<input type="number" name="pageNumberInput" bind:value={page}
 id="pageNumberInput" max="604" min="1" title="Directly go to page…">
 
 <!-- To prevent button before min page -->
@@ -36,6 +38,9 @@ id="pageNumberInput" max="604" min="1" title="Directly go to page…">
 <button class="btn" disabled>→</button>
 {/if}
 
+</div>
+
+
 <style>
 	div {
 		display: flex;
@@ -44,8 +49,9 @@ id="pageNumberInput" max="604" min="1" title="Directly go to page…">
 	input {
 		text-align: center;
 		background-color: transparent;
-		color: white;
+		color: black;
 		border: none;
+		font-size: 20px;
 	}
 	input::-webkit-outer-spin-button,
 	input::-webkit-inner-spin-button {
