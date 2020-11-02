@@ -5,8 +5,6 @@
     import Hyperlink from './Hyperlink.svelte'
     import Zoom from './ButtonsZoom.svelte'
     import {onMount} from 'svelte'
-    import { FluentRevealEffect } from "fluent-reveal-effect"
-
 
     function onInactive(ms, cb) {
         var wait = setTimeout(cb, ms);
