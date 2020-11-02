@@ -18,15 +18,13 @@
 </script>
 
 <!-- svelte-ignore a11y-no-onchange -->
-<div class="btn-border">
-	<select class="btn" id="surahSelect" bind:value={selectVal} on:change={() => {inputPage.set(selectVal)}} >
-		{#each surahs as surah, i}
-			<option value={surah.pageGreen}>
-				{i+1}. {surah.name}
-			</option>
-		{/each}
-	</select>
-</div>
+<select  id="surahSelect" bind:value={selectVal} on:change={() => {inputPage.set(selectVal)}} >
+	{#each surahs as surah, i}
+		<option value={surah.pageGreen}>
+			{i+1}. {surah.name}
+		</option>
+	{/each}
+</select>
 
 <style>
 	select {

@@ -36,19 +36,6 @@
         let toolbar = document.getElementById("toolbar-main")
         toolbar.addEventListener("mouseover", function() {readyToShow=true;});
         toolbar.addEventListener("mouseout", function() {readyToShow=false;});
-
-        FluentRevealEffect.applyEffect(".effect-group-container", {
-            clickEffect: true,
-            lightColor: "rgba(255, 255, 255,0.6)", //borders
-            gradientSize: 80,
-            isContainer: true,
-            children: {
-                borderSelector: ".btn-border",
-                elementSelector: ".btn",
-                lightColor: "rgba(255, 255, 255,0.3)", //in-button
-                gradientSize: 150
-            }
-        })
     });
 
     let neverHide = false //maybe this should be a setting to set permanently?
@@ -66,16 +53,12 @@
 
     <div id="toolbar-minor" class="effect-group-container">
 
-        <div class="btn-border">
             <a class="btn" href="#/settings">Settings</a>
-        </div>
         <Zoom />
         <Buttons/>
         <Select/>
         <Hyperlink/>
-        <div class="btn-border">
             <button class="btn" on:click={toggleHide}>Pin</button>
-        </div>
 
     </div>
 
@@ -93,19 +76,7 @@
         border-radius: 100px;
         transition: all 200ms ease;
         border-radius: 100px;
-
     }
-    :global(.btn-border) {
-        display: inline-block;
-        margin: 5px;
-        border-radius: 100px;
-
-    }
-    :global(.btn-border .btn) {
-        display: block;
-        margin: 2px;
-    }
-
     div#toolbar-main {
         display: flex;
         flex-direction: column;

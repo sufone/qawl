@@ -31,6 +31,4 @@
 	}
 </script>
 
-<div class="btn-border">
-	<button class="btn" on:click={open}>More</button>
-</div>
+<button class="btn" on:click={open}>More</button>
