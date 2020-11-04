@@ -1,4 +1,7 @@
 <style global>
+    *:focus {
+        outline: none;
+    }
     .btn {
         all: unset;
     }
