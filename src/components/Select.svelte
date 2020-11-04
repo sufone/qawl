@@ -29,13 +29,13 @@
 <style>
 	select {
 		background-color: transparent;
-		color: white;
-		all:unset;
-        border-radius: 2px;
-		border: solid white 1px;
-        padding: 5px;
-        margin: 1px;
+		border: none;
 		text-align-last:center;
 		font-weight: bold;
-		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;	}
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+		font-size: 20px;
+	}
+	select:hover {
+		background-color: rgba(0, 0, 0, 0.096);
+	}
 </style>
