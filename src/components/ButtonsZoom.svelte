@@ -14,7 +14,7 @@
 
 <div>
 	<button class="btn" on:click={() => {zoomVal += 10}}>+</button>
-	<input  id="slider" type=range bind:value={zoomVal} min=40 max=100>
+	<input class="slider" id="slider" type=range bind:value={zoomVal} min=40 max=100>
 	<button class="btn" on:click={() => {zoomVal -= 10}}>-</button>
 </div>
 
