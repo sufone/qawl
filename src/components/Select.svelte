@@ -35,5 +35,7 @@
 		border: solid white 1px;
         padding: 5px;
         margin: 1px;
-	}
+		text-align-last:center;
+		font-weight: bold;
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;	}
 </style>

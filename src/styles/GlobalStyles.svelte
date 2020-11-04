@@ -8,12 +8,12 @@
         /* background: none; */
         color: #000;
         border: 1px solid transparent;
-        border-radius: 100px;
+        /* border-radius: 4px; */
         transition: all 200ms ease;
-        border-radius: 100px;
+        font-weight: bold;
 	}
 	.btn:hover {
-		border: 1px solid orange;
+		background-color: rgba(0, 0, 0, 0.096);
 	}
 
 
