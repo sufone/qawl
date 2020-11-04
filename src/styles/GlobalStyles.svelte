@@ -1,5 +1,7 @@
 <style global>
-
+    .btn {
+        all: unset;
+    }
 	.btn {
 		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 		font-size: 20px;
