@@ -1,5 +1,6 @@
 <script>
 	import {zoomStore} from '../stores/settings.js'
+	import {onMount} from 'svelte'
 
 	let zoomVal
 
@@ -10,6 +11,19 @@
 	$: if (zoomVal > 39 && zoomVal < 101) {
 		zoomStore.set(zoomVal)
 	}
+
+	onMount(() => {
+		window.addEventListener('wheel', function(e) {
+			if (e.ctrlKey == true) { //all corresponds to touchpad pinch in/out
+				if (e.deltaY < 0) {
+					zoomVal += 5
+				}
+				if (e.deltaY > 0) {
+					zoomVal -= 5
+				}
+			}
+		});
+	})
 </script>
 
 <div>
