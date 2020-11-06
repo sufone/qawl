@@ -8,17 +8,24 @@
 		console.log($zoomStore)
 		zoomVal = $zoomStore
 	}
-	$: if (zoomVal > 39 && zoomVal < 101) {
-		zoomStore.set(zoomVal)
+	$: if (zoomVal >= 40 && zoomVal <= 150) {
+		zoomStore.set(zoomVal) //doing it as long as it is in accepted range
+	} else if (zoomVal < 40) {
+		zoomVal = 40
+	} else if (zoomVal > 150) {
+		zoomVal = 150
+	}
+	$: if(zoomVal > 100 && zoomVal <=150) {
+		document.body.style.width = zoomVal+"%"
 	}
 
-	onMount(() => {
+	$: onMount(() => {
 		window.addEventListener('wheel', function(e) {
 			if (e.ctrlKey == true) { //all corresponds to touchpad pinch in/out
-				if (e.deltaY < 0) {
+				if (e.deltaY < 0 && zoomVal < 150) {
 					zoomVal += 5
 				}
-				if (e.deltaY > 0) {
+				if (e.deltaY > 0 && zoomVal > 40) {
 					zoomVal -= 5
 				}
 			}
@@ -27,9 +34,9 @@
 </script>
 
 <div>
-	<button class="btn" on:click={() => {zoomVal += 10}}>+</button>
-	<input class="slider" id="slider" type=range bind:value={zoomVal} min=40 max=100>
-	<button class="btn" on:click={() => {zoomVal -= 10}}>-</button>
+	<button class="btn" on:click={() => {if (zoomVal < 150) {zoomVal += 5}}}>+</button>
+	<input class="slider" id="slider" type=range bind:value={zoomVal} min=40 max=150>
+	<button class="btn" on:click={() => {if (zoomVal > 40) {zoomVal -= 5}}}>-</button>
 </div>
 
 
