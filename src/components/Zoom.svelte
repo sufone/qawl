@@ -31,12 +31,19 @@
 			}
 		});
 	})
+
+	function zoomIn() {
+		if (zoomVal < 150) {zoomVal += 5}
+	}
+	function zoomOut() {
+		if (zoomVal > 40) {zoomVal -= 5}
+	}
 </script>
 
 <div>
-	<button class="btn" on:click={() => {if (zoomVal < 150) {zoomVal += 5}}}>+</button>
+	<button class="btn" on:click={zoomIn}>+</button>
 	<input class="slider" id="slider" type=range bind:value={zoomVal} min=40 max=150>
-	<button class="btn" on:click={() => {if (zoomVal > 40) {zoomVal -= 5}}}>-</button>
+	<button class="btn" on:click={zoomOut}>-</button>
 </div>
 
 
