@@ -1,5 +1,7 @@
 <script>
 	import {inputPage} from '../stores/page.js'
+	import {onMount} from 'svelte'
+	import mousetrap from 'mousetrap'
 
 	function increment(){
 		inputPage.update(p => p += 2)
@@ -16,7 +18,16 @@
 	}
 
 	let page
+	let inputElem
 
+	onMount(() => {
+		inputElem = document.getElementById("pageNumberInput")
+		//KEYBOARD SHORTCUTS
+		mousetrap.bind(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"], function() {
+			inputElem.value = ''
+			inputElem.focus();
+		});
+	})
 </script>
 
 <div>
@@ -28,7 +39,7 @@
 <button class="btn" disabled>←</button>
 {/if}
 
-<input class="btn" type="number" name="pageNumberInput" bind:value={page}
+<input class="btn" on:keyup={checkDigits} type="number" name="pageNumberInput" bind:value={page}
 id="pageNumberInput" max="604" min="1" title="Directly go to page…">
 
 <!-- To prevent button before min page -->
