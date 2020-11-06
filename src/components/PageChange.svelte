@@ -22,12 +22,22 @@
 
 	onMount(() => {
 		inputElem = document.getElementById("pageNumberInput")
+
 		//KEYBOARD SHORTCUTS
 		mousetrap.bind(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"], function() {
 			inputElem.value = ''
 			inputElem.focus();
 		});
 	})
+
+	function checkDigits() { //So no typing beyond 3 digits
+		if (inputElem.value.length == 3) {
+			inputElem.blur();
+		}
+		if (inputElem.value > 604 || inputElem < 1) {
+			inputElem.value = $inputPage
+		}
+	}
 </script>
 
 <div>
