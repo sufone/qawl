@@ -1,5 +1,5 @@
 <script>
-    import Select from './Select.svelte'
+    import SurahDropdown from './SurahDropdown.svelte'
     import PageChange from './PageChange.svelte'
     import NumberSlider from './NumberSlider.svelte'
     import Hyperlink from './Hyperlink.svelte'
@@ -54,7 +54,7 @@
         <a class="btn " href="#/settings">Settings</a>
         <Zoom />
         <PageChange/>
-        <Select/>
+        <SurahDropdown/>
         <Hyperlink/>
             <button class="btn" on:click={toggleHide}>Pin</button>
 
