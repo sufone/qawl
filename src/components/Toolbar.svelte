@@ -1,9 +1,9 @@
 <script>
     import Select from './Select.svelte'
-    import Buttons from './ButtonsPage.svelte'
+    import PageChange from './PageChange.svelte'
     import NumberSlider from './NumberSlider.svelte'
     import Hyperlink from './Hyperlink.svelte'
-    import Zoom from './ButtonsZoom.svelte'
+    import Zoom from './Zoom.svelte'
     import {onMount} from 'svelte'
 
     function onInactive(ms, cb) {
@@ -53,7 +53,7 @@
 
         <a class="btn " href="#/settings">Settings</a>
         <Zoom />
-        <Buttons/>
+        <PageChange/>
         <Select/>
         <Hyperlink/>
             <button class="btn" on:click={toggleHide}>Pin</button>
