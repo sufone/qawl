@@ -13,7 +13,7 @@
         /* background: none; */
         color: #000;
         border: 1px solid transparent;
-        /* border-radius: 4px; */
+        border-radius: 2px;
         transition: all 200ms ease;
         font-weight: bold;
 	}
