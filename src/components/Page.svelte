@@ -39,12 +39,14 @@ div {
 	transition: max-width 100ms ease;
 	margin-top: 100px;
 	margin-bottom: 50px;
+    background-color: transparent;
 }
 img {
     max-width: 50%;
 	height: auto;
 	background-color: transparent;
 	border: none;
+    /* filter: invert(1) */
 }
 
 </style>
