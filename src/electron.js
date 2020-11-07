@@ -15,6 +15,7 @@ function createMainWindow(){
 	mainWindow = new BrowserWindow({
 		webPreferences: {
 			nodeIntegration: false,
+			enableRemoteModule: true,
 			preload: __dirname + '/preload.js'
 		},
 		title: app.name,
