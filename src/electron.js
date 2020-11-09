@@ -4,6 +4,10 @@ const settings = require('electron-settings');
 const isDev = require('electron-is-dev');
 const setupApplicationMenu = require('./menu').setupApplicationMenu;
 
+require('electron-update-notification').setUpdateNotification({
+	repository: 'sufone/qawl' // Optional, use repository field of package.json if not specified
+})
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
