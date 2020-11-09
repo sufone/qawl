@@ -1,21 +1,22 @@
 {
-  "name": "svelte-electron-starter",
-  "description": "svelte-electron-starter",
+  "name": "qawl",
+  "description": "Desktop Quran App",
   "author": {
-    "name": "Albert Sunyer",
-    "url": "https://www.nye.cat",
+    "name": "Naved Islam",
+    "url": "https://navedislam.com/apps",
     "email": "navedcoded@gmail.com"
   },
-  "version": "0.0.1",
-  "license": "MIT",
+  "version": "0.0.2",
+  "license": "AGPL-3.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nye/svelte-electron-starter.git"
+    "url": "https://github.com/sufone/qawl"
   },
   "main": "./src/electron.js",
   "dependencies": {
     "electron-is-dev": "^1.1.0",
     "electron-settings": "^3.2.0",
+    "electron-update-notification": "^0.1.0",
     "mousetrap": "^1.6.5",
     "svelte-persistent-store": "^0.1.4"
   },
