@@ -6,8 +6,8 @@
     "url": "https://navedislam.com/apps",
     "email": "navedcoded@gmail.com"
   },
-  "version": "0.0.2",
   "license": "AGPL-3.0",
+  "version": "0.0.3",
   "repository": {
     "type": "git",
     "url": "https://github.com/sufone/qawl"
