@@ -8,6 +8,11 @@ require('electron-update-notification').setUpdateNotification({
 	repository: 'sufone/qawl' // Optional, use repository field of package.json if not specified
 })
 
+const Nucleus = require('nucleus-nodejs')
+Nucleus.init('5fa93c8b96cc387252034040', {
+	autoUserId: true
+})
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
@@ -42,6 +47,7 @@ function createMainWindow(){
 	mainWindow.once('ready-to-show', () => {
 		mainWindow.show();
 		mainWindow.focus();
+		Nucleus.appStarted()
 	});
 
 	// Manage window settings

@@ -18,6 +18,7 @@
     "electron-settings": "^3.2.0",
     "electron-update-notification": "^0.1.0",
     "mousetrap": "^1.6.5",
+    "nucleus-nodejs": "^3.0.6",
     "svelte-persistent-store": "^0.1.4"
   },
   "devDependencies": {
