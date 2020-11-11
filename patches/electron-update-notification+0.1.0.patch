@@ -1,0 +1,22 @@
+diff --git a/node_modules/electron-update-notification/lib/index.js b/node_modules/electron-update-notification/lib/index.js
+index 6598150..f2e3bbf 100644
+--- a/node_modules/electron-update-notification/lib/index.js
++++ b/node_modules/electron-update-notification/lib/index.js
+@@ -43,12 +43,13 @@ async function checkUpdate({ repository, token } = {}) {
+         if (latestVersion != electron_1.default.app.getVersion()) {
+             electron_1.default.dialog.showMessageBox({
+                 message: `New release available: ${latestVersion}\n\n${latest.body}`,
+-                buttons: ['Download', 'Later'],
+-            }, res => {
+-                if (res === 0) {
++                buttons: ['Download Update from Website', 'Update Later'],
++            })
++            .then(result => {
++                if (result.response === 0) {
+                     electron_1.default.shell.openExternal(latest.html_url);
+                 }
+-            });
++            })
+         }
+     }
+     catch (err) {
