@@ -32,3 +32,20 @@
 </div>
 
 
+<style>
+	* {
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+	}
+	#container {
+		padding-left: 100px;
+		padding-top: 100px;
+		display: flex;
+		flex-direction: column;
+		justify-items: center;
+		max-width: 60vw;
+	}
+	#backLink {
+		/* padding-top: 200px; */
+		color: red;
+	}
+</style>
