@@ -3,6 +3,7 @@
 </script>
 
 <p>Choose your online reference provider:</p>
+	<h1>Settings</h1>
 
 <select bind:value={$hyperlinkProvider}>
 	<option disabled> - English - </option>
