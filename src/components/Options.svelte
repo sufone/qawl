@@ -21,6 +21,12 @@
 	</select>
 
 	<br><br><br><br>
+	<h2>Information</h2>
+	<p>You are now running Qawl v{appVersion}. This app will automatically notify when updates are released. Just in case, you can <a href="https://github.com/sufone/qawl/releases">check for updates manually on the download page.</a></p>
+
+	<p>Please contact <a href="mailto:navedcoded@gmail.com">navedcoded@gmail.com</a> for support, feedback and comments.</p>
+
+	<br><br>
 	<p ><a href="#/" id="backLink">Back to Quran</a></p>
 
 </div>
