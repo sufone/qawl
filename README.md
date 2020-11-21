@@ -12,10 +12,7 @@ Sorry this readme is bad, making it public quickly in case people want to contri
 # Development
 Use the node scripts `electron-dev` and `pure-dist`, others are there from a template still (to be removed later). I prefer yarn to use yarn so that's the lockfile here.
 
-Please adjust the `index.js` file for the npm package `electron-update-notification` to use a promise `.then()` instead of callbacks. [See my fork](https://github.com/mr-islam/electron-update-notification) for an example. (I should submit a PR, publish on npm, or at least make an npm `patch-package`… but that's for later when development is done. Contributions in this area would be amazing!~)
-
-I promise this is the *worst* practice in this repo – everything else is clear and clean, I think! This is only relevant when building a release, which only I'm doing now anyway. It makes no difference when developing.
-
+The repo uses an automatic `postinstall` script to patch the npm package `electron-update-notification` to use a promise `.then()` instead of callbacks. I haven't been able to test if I set this up correctly, but hopefully it's fine. You can check the installed package files manually, or just message me for help to ensure it's all good.
 
 
 # License
