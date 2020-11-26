@@ -10,7 +10,7 @@ Old version: https://github.com/mr-islam/qawl
 Sorry this readme is bad, making it public quickly in case people want to contribute early ♥
 
 # Development
-1. Make sure you have `node` properly setup with a recent version. 
+1. Make sure you have `node` properly setup with a recent version (I use 14.x).
 2. Clone this repo
 3. Run `yarn` to install dependencies
 4. Run a local build with `electron-dev`, has hot-reload
