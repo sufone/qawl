@@ -10,13 +10,19 @@ Old version: https://github.com/mr-islam/qawl
 Sorry this readme is bad, making it public quickly in case people want to contribute early ♥
 
 # Development
+Preparation
 1. Make sure you have `node` properly setup with a recent version (I use 14.x).
-2. Clone this repo
-3. Run `yarn` to install dependencies
-4. Run a local build with `electron-dev`, has hot-reload
-5. Build a package with `pure-dist-[platform]` choosing the relevant platform from the scripts available in the `package.json`
+2. Install `yarn`
+3. Also ensure you have node-gyp ((this guide can help[https://github.com/nodejs/node-gyp])
+4. Clone this repo
+5. Run `yarn` to install dependencies
 
 (The repo uses an automatic `postinstall` script to patch the npm package `electron-update-notification` to use a promise `.then()` instead of callbacks. I haven't been able to test if I set this up correctly, but hopefully it's fine. You can check the installed package files manually, or just message me for help to ensure it's all good.)
+
+Action
+5. Run a local build with `electron-dev`, has hot-reload
+6. Build a package with `dist-[platform]` choosing the relevant platform from the scripts available in the `package.json`
+
 
 *Many thanks to Albert Nye for his svelte electron template!*
 
