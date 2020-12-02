@@ -67,12 +67,6 @@ function createMainWindow(){
 		});
 	});
 
-	//I think so Quran.com links open in default user browser
-	mainWindow.webContents.on('new-window', function(e, url) {
-	e.preventDefault();
-	require('electron').shell.openExternal(url);
-	});
-
 	// Development stuff
 	let watcher;
 

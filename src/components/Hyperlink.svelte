@@ -7,7 +7,7 @@
 	function open() {
 		let URL = $hyperlinkProvider + $currentSurah + suffix
 		console.log(URL)
-		window.open(URL, '_blank')
+		window.remote.require('electron').shell.openExternal(URL)
 	}
 
 	$: if ($hyperlinkProvider) { //not pretty, but needs to be handled. maybe move to a derived store?
