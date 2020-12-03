@@ -1,4 +1,7 @@
 <style global>
+  ::-webkit-scrollbar {
+    display: none;
+}
     *:focus {
         outline: none;
     }
