@@ -51,12 +51,12 @@
 
     <div id="toolbar-minor" >
 
-        <a class="btn " href="#/settings">Settings</a>
+        <a class="btn " href="#/settings" title="Set your preferences">Settings</a>
         <Zoom />
         <PageChange/>
         <SurahDropdown/>
         <Hyperlink/>
-            <button class="btn" on:click={toggleHide}>Pin</button>
+        <button title="Toggle auto-hide of this toolbar" class="btn" on:click={toggleHide}>Pin</button>
 
     </div>
 

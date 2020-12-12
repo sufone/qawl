@@ -15,7 +15,7 @@
 	let page
 </script>
 
-<input class="slider" id="slider" type=range bind:value={page} min=1 max=604>
+<input title="Drag to change page" class="slider" id="slider" type=range bind:value={page} min=1 max=604>
 
 <style>
 	#slider {

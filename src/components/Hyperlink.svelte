@@ -31,4 +31,4 @@
 	}
 </script>
 
-<button class="btn" on:click={open}>More</button>
+<button title="Open online translation, recitation & tafsir" class="btn" on:click={open}>More</button>

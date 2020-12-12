@@ -41,9 +41,9 @@
 </script>
 
 <div>
-	<button class="btn" on:click={zoomIn}>+</button>
-	<input class="slider" id="slider" type=range bind:value={zoomVal} min=40 max=150>
-	<button class="btn" on:click={zoomOut}>-</button>
+	<button title="Zoom in" class="btn" on:click={zoomIn}>+</button>
+	<input title="Drag to zoom" class="slider" id="slider" type=range bind:value={zoomVal} min=40 max=150>
+	<button title="Zoom out" class="btn" on:click={zoomOut}>-</button>
 </div>
 
 

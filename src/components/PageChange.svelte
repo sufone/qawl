@@ -44,7 +44,7 @@
 
 <!-- To prevent button after max page -->
 {#if $inputPage < 603}
-<button class="btn" on:click={increment}>←</button>
+<button title="Next page" class="btn" on:click={increment}>←</button>
 {:else}
 <button class="btn" disabled>←</button>
 {/if}
@@ -54,7 +54,7 @@ id="pageNumberInput" max="604" min="1" title="Directly go to page…">
 
 <!-- To prevent button before min page -->
 {#if $inputPage > 2}
-<button class="btn" on:click={decrement}>→</button>
+<button title="Previous page" class="btn" on:click={decrement}>→</button>
 {:else}
 <button class="btn" disabled>→</button>
 {/if}
