@@ -23,7 +23,9 @@
 	.btn:hover {
 		background-color: rgba(0, 0, 0, 0.096);
 	}
-
+  .btn-disabled {
+    color: rgb(143, 143, 143)
+  }
 
     input[type=range].slider {
   width: 100%;
