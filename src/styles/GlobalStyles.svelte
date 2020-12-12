@@ -5,10 +5,10 @@
     *:focus {
         outline: none;
     }
-    .btn {
+    .btn, .btn-disabled {
         all: unset;
     }
-	.btn {
+	.btn, .btn-disabled {
 		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 		font-size: 20px;
         padding: 0.5rem 1rem;

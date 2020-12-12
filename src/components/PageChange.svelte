@@ -46,7 +46,7 @@
 {#if $inputPage < 603}
 <button title="Next page" class="btn" on:click={increment}>←</button>
 {:else}
-<button class="btn" disabled>←</button>
+<button title="Cannot go forward; this is the last page" class="btn-disabled" disabled>←</button>
 {/if}
 
 <input class="btn" on:keyup={checkDigits} type="number" name="pageNumberInput" bind:value={page}
@@ -56,7 +56,7 @@ id="pageNumberInput" max="604" min="1" title="Directly go to page…">
 {#if $inputPage > 2}
 <button title="Previous page" class="btn" on:click={decrement}>→</button>
 {:else}
-<button class="btn" disabled>→</button>
+<button title="Cannot go back; this is the first page" class="btn-disabled" disabled>→</button>
 {/if}
 
 </div>
