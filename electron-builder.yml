@@ -37,4 +37,4 @@ linux:
   icon: "public/icon.png"
   category: Education
   target:
-    - deb
+    - AppImage
