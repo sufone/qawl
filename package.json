@@ -1,6 +1,6 @@
 {
   "name": "qawl",
-  "description": "Desktop Quran App",
+  "description": "Desktop Quran Reader App",
   "author": {
     "name": "Naved Islam",
     "url": "https://navedislam.com/apps",
@@ -8,6 +8,7 @@
   },
   "version": "0.0.4",
   "license": "AGPL-3.0-or-later",
+  "homepage": "https://qawl.app",
   "repository": {
     "type": "git",
     "url": "https://github.com/sufone/qawl"
