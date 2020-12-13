@@ -20,17 +20,15 @@ asar: true
 #       type: "link"
 #       path: "/Applications"
 
-# # Windows configuration
+# Windows configuration
 win:
   icon: "public/icon.png"
-#   target:
-#     - "zip"
-#     - "nsis"
+  target:
+    - "nsis"
 
-# # Config for the windows installer
-# nsis:
-#   oneClick: true
-#   perMachine: true
+# Config for the windows installer
+nsis:
+  oneClick: true
 
 # Linux configuration
 linux:
