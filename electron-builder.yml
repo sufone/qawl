@@ -34,7 +34,7 @@ win:
 
 # Linux configuration
 linux:
-  icon: "public/icon.png"
+  icon: "public/512x512.png"
   category: Education
   target:
     - AppImage
