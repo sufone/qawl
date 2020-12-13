@@ -35,5 +35,5 @@ linux:
   icon: "public/512x512.png"
   category: Education
   target:
-    - AppImage
-    - deb
+    - "AppImage"
+    - "deb"
