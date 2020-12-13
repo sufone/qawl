@@ -38,3 +38,4 @@ linux:
   category: Education
   target:
     - AppImage
+    - deb
