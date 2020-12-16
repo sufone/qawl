@@ -2,8 +2,11 @@
 
 	import { surahs } from '../surahs.svelte'
 	import {inputPage, currentSurah} from '../stores/page.js'
+	import Mousetrap from 'mousetrap'
 
 	let selectVal
+
+	let current
 
 	$: if ($inputPage) { // TODO: this code should be part of the store? derived? important overall info
 		console.log($inputPage)
@@ -15,10 +18,26 @@
 		}
 	}
 
+	Mousetrap.bind("w", () => {
+		if ($currentSurah < 114) {
+			currentSurah.update(n => n)
+			console.log($currentSurah)
+			selectVal = surahs[$currentSurah].pageGreen
+			inputPage.set(selectVal)
+		}
+	})
+	Mousetrap.bind("s", () => {
+		if ($currentSurah > 1) {
+			currentSurah.update(n => n-2)
+			console.log($currentSurah)
+			selectVal = surahs[$currentSurah].pageGreen
+			inputPage.set(selectVal)
+		}
+	})
 </script>
 
 <!-- svelte-ignore a11y-no-onchange -->
-<select title="Choose a surah to read" id="surahSelect" bind:value={selectVal} on:change={() => {inputPage.set(selectVal)}} >
+<select title="Choose a surah to read [w/d]" id="surahSelect" bind:value={selectVal} on:change={() => {inputPage.set(selectVal)}} >
 	{#each surahs as surah, i}
 		<option value={surah.pageGreen}>
 			{i+1}. {surah.name}

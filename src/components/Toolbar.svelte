@@ -5,6 +5,7 @@
     import Hyperlink from './Hyperlink.svelte'
     import Zoom from './Zoom.svelte'
     import {onMount} from 'svelte'
+    import Mousetrap from 'mousetrap'
 
     function onInactive(ms, cb) {
         var wait = setTimeout(cb, ms);
@@ -43,6 +44,13 @@
         console.log(neverHide)
     }
 
+    Mousetrap.bind(",", () => {
+        document.getElementById('settings-anchor').click()
+    })
+    Mousetrap.bind("enter", () => {
+        document.getElementById('pin-toolbar').click()
+    })
+
 </script>
 
 <div id="toolbar-main" class="acrylic" >
@@ -51,12 +59,12 @@
 
     <div id="toolbar-minor" >
 
-        <a class="btn " href="#/settings" title="Set your preferences">Settings</a>
+        <a id="settings-anchor" class="btn " href="#/settings" title="Set your preferences [ , ]">Settings</a>
         <Zoom />
         <PageChange/>
         <SurahDropdown/>
         <Hyperlink/>
-        <button title="Toggle auto-hide of this toolbar" class="btn" on:click={toggleHide}>Pin</button>
+        <button id="pin-toolbar" title="Toggle auto-hide of this toolbar [enter]" class="btn" on:click={toggleHide}>Pin</button>
 
     </div>
 

@@ -1,8 +1,12 @@
 <script>
 	import { hyperlinkProvider } from "../stores/settings"
+	import Mousetrap from 'mousetrap'
 
 	const appVersion = window.remote.require('electron').app.getVersion()
 
+	Mousetrap.bind(",", () => {
+        document.getElementById('reading-anchor').click();
+    })
 </script>
 
 <div id="container">
@@ -27,7 +31,7 @@
 	<p>Please contact <a href="mailto:navedcoded@gmail.com">navedcoded@gmail.com</a> for support, feedback and comments.</p>
 
 	<br><br>
-	<p ><a href="#/" id="backLink">Back to Quran</a></p>
+	<p ><a href="#/" id="reading-anchor" title="Return to the Quran reading screen [ , ]">Back to Quran</a></p>
 
 </div>
 
@@ -44,7 +48,7 @@
 		justify-items: center;
 		max-width: 60vw;
 	}
-	#backLink {
+	#reading-anchor {
 		/* padding-top: 200px; */
 		color: red;
 	}
