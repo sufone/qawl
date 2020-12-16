@@ -1,6 +1,7 @@
 <script>
 	import { currentSurah } from "../stores/page";
 	import {hyperlinkProvider} from "../stores/settings"
+	import Mousetrap from 'mousetrap'
 
 	let suffix = "/"
 
@@ -29,6 +30,10 @@
 				break
 		}
 	}
+
+	Mousetrap.bind("q", () => {
+		document.getElementById("online-hyperlink").click()
+	})
 </script>
 
-<button title="Open online translation, recitation & tafsir" class="btn" on:click={open}>More</button>
+<button id="online-hyperlink" title="Open online translation, recitation & tafsir [ q ]" class="btn" on:click={open}>More</button>
