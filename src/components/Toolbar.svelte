@@ -45,7 +45,10 @@
     }
 
     Mousetrap.bind(",", () => {
-        document.getElementById('settings-anchor').click();
+        document.getElementById('settings-anchor').click()
+    })
+    Mousetrap.bind("enter", () => {
+        document.getElementById('pin-toolbar').click()
     })
 
 </script>
@@ -61,7 +64,7 @@
         <PageChange/>
         <SurahDropdown/>
         <Hyperlink/>
-        <button title="Toggle auto-hide of this toolbar" class="btn" on:click={toggleHide}>Pin</button>
+        <button id="pin-toolbar" title="Toggle auto-hide of this toolbar [enter]" class="btn" on:click={toggleHide}>Pin</button>
 
     </div>
 
