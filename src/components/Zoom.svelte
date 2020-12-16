@@ -1,6 +1,7 @@
 <script>
 	import {zoomStore} from '../stores/settings.js'
 	import {onMount} from 'svelte'
+	import Mousetrap from 'mousetrap'
 
 	let zoomVal
 
@@ -21,7 +22,7 @@
 
 	$: onMount(() => {
 		window.addEventListener('wheel', function(e) {
-			if (e.ctrlKey == true) { //all corresponds to touchpad pinch in/out
+			if (e.ctrlKey == true) { //all corresponds to touchpad pinch in/out or ctrl+scroll
 				if (e.deltaY < 0 && zoomVal < 150) {
 					zoomVal += 5
 				}
@@ -38,12 +39,19 @@
 	function zoomOut() {
 		if (zoomVal > 40) {zoomVal -= 5}
 	}
+
+	Mousetrap.bind("=", () => {
+		document.getElementById("zoom-in").click()
+	})
+	Mousetrap.bind("-", () => {
+		document.getElementById("zoom-out").click()
+	})
 </script>
 
 <div>
-	<button title="Zoom in" class="btn" on:click={zoomIn}>+</button>
+	<button id="zoom-in" title="Zoom in [ = ]" class="btn" on:click={zoomIn}>+</button>
 	<input title="Drag to zoom" class="slider" id="slider" type=range bind:value={zoomVal} min=40 max=150>
-	<button title="Zoom out" class="btn" on:click={zoomOut}>-</button>
+	<button id="zoom-out" title="Zoom out [ - ]" class="btn" on:click={zoomOut}>-</button>
 </div>
 
 
