@@ -31,7 +31,7 @@
 	<p>Please contact <a href="mailto:navedcoded@gmail.com">navedcoded@gmail.com</a> for support, feedback and comments.</p>
 
 	<br><br>
-	<p ><a href="#/" id="reading-anchor">Back to Quran</a></p>
+	<p ><a href="#/" id="reading-anchor" title="Return to the Quran reading screen [ , ]">Back to Quran</a></p>
 
 </div>
 

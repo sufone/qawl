@@ -56,7 +56,7 @@
 
     <div id="toolbar-minor" >
 
-        <a id="settings-anchor" class="btn " href="#/settings" title="Set your preferences">Settings</a>
+        <a id="settings-anchor" class="btn " href="#/settings" title="Set your preferences [ , ]">Settings</a>
         <Zoom />
         <PageChange/>
         <SurahDropdown/>
