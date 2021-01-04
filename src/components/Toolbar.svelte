@@ -4,6 +4,8 @@
     import NumberSlider from './NumberSlider.svelte'
     import Hyperlink from './Hyperlink.svelte'
     import Zoom from './Zoom.svelte'
+    import LastPage from './LastPage.svelte'
+
     import {onMount} from 'svelte'
     import Mousetrap from 'mousetrap'
 
@@ -61,6 +63,7 @@
 
         <a id="settings-anchor" class="btn " href="#/settings" title="Set your preferences [ , ]">Settings</a>
         <Zoom />
+        <LastPage />
         <PageChange/>
         <SurahDropdown/>
         <Hyperlink/>
