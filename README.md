@@ -1,6 +1,6 @@
 WIP Qawl v2
 
-See this issue for the development plan: https://github.com/mr-islam/qawl-svelte/issues/1. **Current status**: 70% parity with previous version (missing keyboard shortcuts, dark theme, icons on hover tooltips, mostly)
+See this issue for the development plan: https://github.com/mr-islam/qawl-svelte/issues/1. **Current status**: 80% parity with previous version (missing dark theme, icons on hover tooltips, mostly)
 
 Feel free to email me if you are interested in contributing right now, before the foundation is done: navedcoded@gmail.com . Sorry if things are a bit messy, but I recommend checking this repo out a few weeks later!
 
