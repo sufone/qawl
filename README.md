@@ -1,6 +1,8 @@
-WIP Qawl v2
+Qawl v2
 
-See this issue for the development plan: https://github.com/mr-islam/qawl-svelte/issues/1. **Current status**: 80% parity with previous version (missing dark theme, icons on hover tooltips, mostly)
+**Current status**: 80% parity with previous version (missing dark theme, icons on hover tooltips, mostly)
+
+This project uses Github Projects to plan development — feel free to [join in](https://github.com/sufone/qawl/projects)!
 
 Feel free to email me if you are interested in contributing right now, before the foundation is done: navedcoded@gmail.com . Sorry if things are a bit messy, but I recommend checking this repo out a few weeks later!
 
@@ -29,7 +31,7 @@ Action
 
 # License
 
-    Copyright (C) 2020 Naved Islam
+    Copyright (C) 2020-2021 Naved Islam
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as published
