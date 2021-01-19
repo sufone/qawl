@@ -26,6 +26,7 @@
 				if (e.deltaY < 0 && zoomVal < 149) { //offest by 1 from 150/40 so it doesn't go out of bounds
 					zoomVal += 1
 				}
+				if (e.deltaY > 0 && zoomVal > 41) {
 					zoomVal -= 1
 				}
 			}
