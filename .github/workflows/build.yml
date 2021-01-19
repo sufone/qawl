@@ -26,10 +26,16 @@ jobs:
         run: yarn dist-general
 
       - name: Upload builds to release
-        uses: softprops/action-gh-release@v1
+        uses: johnwbyrd/update-release@v1
         with:
-          tag_name: ${{ github.ref }}
-          files: dist/*.*
-          draft: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          files: ./dist/*.*
+
+
+        # uses: softprops/action-gh-release@v1
+        # with:
+        #   tag_name: ${{ github.ref }}
+        #   files: dist/*.*
+        #   draft: true
+        # env:
+        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
