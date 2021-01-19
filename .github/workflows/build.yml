@@ -1,0 +1,35 @@
+name: Build Qawl
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    name: Build Qawl
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Install Node.js, NPM and Yarn
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Build for Platform
+        run: yarn dist-general
+
+      - name: Upload builds to release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref }}
+          files: dist/*.*
+          draft: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
