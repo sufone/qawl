@@ -23,11 +23,10 @@
 	$: onMount(() => {
 		window.addEventListener('wheel', function(e) {
 			if (e.ctrlKey == true) { //all corresponds to touchpad pinch in/out or ctrl+scroll
-				if (e.deltaY < 0 && zoomVal < 150) {
-					zoomVal += 5
+				if (e.deltaY < 0 && zoomVal < 149) { //offest by 1 from 150/40 so it doesn't go out of bounds
+					zoomVal += 1
 				}
-				if (e.deltaY > 0 && zoomVal > 40) {
-					zoomVal -= 5
+					zoomVal -= 1
 				}
 			}
 		});
