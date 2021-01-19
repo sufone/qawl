@@ -22,20 +22,13 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile
 
-      - name: Build for Platform
-        run: yarn dist-general
-
-      - name: Upload builds to release
-        uses: johnwbyrd/update-release@v1.0.0
+      - name: Build/release Electron app
+        uses: samuelmeuli/action-electron-builder@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          files: ./dist/*.*
+          # GitHub token, automatically provided to the action
+          # (No need to define this secret in the repo settings)
+          github_token: ${{ secrets.github_token }}
 
-
-        # uses: softprops/action-gh-release@v1
-        # with:
-        #   tag_name: ${{ github.ref }}
-        #   files: dist/*.*
-        #   draft: true
-        # env:
-        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # If the commit is tagged with a version (e.g. "v1.0.0"),
+          # release the app after building
+          release: ${{ startsWith(github.ref, 'refs/tags/v') }}
