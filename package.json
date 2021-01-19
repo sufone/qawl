@@ -60,6 +60,8 @@
     "pure-electron-dev": "cross-env NODE_ENV=development electron .",
     "pure-dist-darwin": "electron-builder --dir --mac --config electron-builder.yml",
     "pure-dist-lin": "electron-builder -l --config electron-builder.yml",
-    "pure-dist-win": "electron-builder -w --config electron-builder.yml"
+    "pure-dist-win": "electron-builder -w --config electron-builder.yml",
+    "dist-general": "run-s build pure-dist-general",
+    "pure-dist-general": "electron-builder --dir --config electron-builder.yml"
   }
 }
