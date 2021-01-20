@@ -5,24 +5,23 @@ copyright: "Copyright © 2020 Naved Islam"
 # Package app code into a asar archive. Set to false to debug issues.
 asar: true
 
-# # Mac OS configuration
-# mac:
-#   icon: "public/img/icon.icns"
-#   category: "public.app-category.utilities"
+# Mac OS configuration
+mac:
+  category: "public.app-category.education"
 
-# # Config for OSX dmg
-# dmg:
-#   contents:
-#     - x: 130
-#       y: 220
-#     - x: 410
-#       y: 220
-#       type: "link"
-#       path: "/Applications"
+# Config for OSX dmg
+dmg:
+  contents:
+    - x: 130
+      y: 220
+    - x: 410
+      y: 220
+      type: "link"
+      path: "/Applications"
 
 # Windows configuration
 win:
-  icon: "public/icon.png"
+  icon: "icon.png"
   target:
     - "nsis"
 
@@ -32,7 +31,7 @@ nsis:
 
 # Linux configuration
 linux:
-  icon: "public/512x512.png"
+  icon: "512x512.png"
   category: Education
   target:
     - "AppImage"
