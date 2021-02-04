@@ -86,6 +86,7 @@
         display: flex;
         justify-content: space-between;
         width: 70%;
+        min-width: 906px;
         margin-left: 15%;
         margin-bottom: 1.5%;
         position: fixed;
