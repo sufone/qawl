@@ -82,25 +82,28 @@
 
         cursor: default;
         display: flex;
-        justify-content: space-around;
-        width: 90%;
-        margin-left: 2.8%;
+        justify-content: space-between;
+        width: 70%;
+        margin-left: 15%;
         margin-bottom: 1.5%;
         position: fixed;
         bottom: 0;
-        height: 6%;
+        height: 7%;
         box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
         transition: opacity 300ms ease;
 
         z-index: 2;
-        padding: 15px;
+        /* padding-top: 12px; */
+        /* padding: 5px; */
         /* border-radius: 4px; */
     }
     div#toolbar-minor {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
-        padding: 5px 0 25px 0;
+        justify-content: space-between;
+        padding: 0 0 0 0;
+        margin: 0 0 25px 0;
+        
     }
     a {
         text-decoration: none;
