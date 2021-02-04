@@ -26,11 +26,11 @@
 
 	<br><br><br><br>
 	<h2>Information</h2>
-	<p>You are now running Qawl v{appVersion}. This app will automatically check for updates when you launch it, and notify you. Just in case, you can <a href="https://github.com/sufone/qawl/releases">check for updates manually on the download page.</a></p>
+	<p>You are now running Qawl v{appVersion}. This app will automatically check for updates when you launch it, and notify you. Just in case, you can <a target="_blank" href="https://github.com/sufone/qawl/releases">check for updates manually on the download page.</a></p>
 
 	<p>Please contact <a href="mailto:navedcoded@gmail.com">navedcoded@gmail.com</a> for support, feedback and comments.</p>
 
-	<p><a href="https://github.com/sufone/qawl">Qawl is an <em>open-source, community project</em>.</a></p>
+	<p><a target="_blank" href="https://github.com/sufone/qawl">Qawl is an <em>open-source, community project</em>.</a></p>
 
 	<br><br>
 	<p ><a href="#/" id="reading-anchor" title="Return to the Quran reading screen [ , ]">Back to Quran</a></p>

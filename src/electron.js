@@ -35,7 +35,8 @@ function createMainWindow(){
 		x: windowState.bounds && windowState.bounds.x || undefined,
 		y: windowState.bounds && windowState.bounds.y || undefined,
 		backgroundColor: '#FFFFFF',
-		show: false
+		show: false,
+		nativeWindowOpen: true
 	});
 
 	// Set the main app menú
@@ -125,3 +126,23 @@ app.on('activate', () => {
         createMainWindow();
     }
 });
+
+mainWindow.webContents.on("new-window", function(event, url) {
+	event.preventDefault();
+	shell.openExternal(url);
+  });  
+
+// Listen for web contents being created
+app.on('web-contents-created', (e, contents) => {
+
+	// Check for a webview
+	if (contents.getType() == 'webview') {
+  
+	  // Listen for any new window events
+	  contents.on('new-window', (e, url) => {
+		e.preventDefault()
+		shell.openExternal(url)
+	  })
+	}
+  })
+  
