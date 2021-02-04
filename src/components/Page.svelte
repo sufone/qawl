@@ -38,7 +38,7 @@ div {
 	margin-left: auto;
 	transition: max-width 100ms ease;
 	margin-top: 100px;
-	margin-bottom: 50px;
+	margin-bottom: 100px;
     background-color: transparent;
 }
 img {
