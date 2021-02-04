@@ -28,7 +28,7 @@ function createMainWindow(){
 			preload: __dirname + '/preload.js'
 		},
 		title: app.name,
-  		icon: __dirname + '/icon.png',
+		icon: path.join(__dirname, '/icon/Icon-512x512.png'),
 		titleBarStyle: 'hidden',
         width: windowState.bounds && windowState.bounds.width || 1600,
 		height: windowState.bounds && windowState.bounds.height || 920,

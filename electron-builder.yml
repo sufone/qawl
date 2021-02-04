@@ -1,6 +1,10 @@
 productName: "Qawl"
 appId: "app.qawl"
 copyright: "Copyright © 2020 Naved Islam"
+files: 
+  - "**/*"
+  - "build/**/*"
+  - "icon/**/*"
 
 # Package app code into a asar archive. Set to false to debug issues.
 asar: true
@@ -21,7 +25,6 @@ dmg:
 
 # Windows configuration
 win:
-  icon: "icon.png"
   target:
     - "nsis"
 
@@ -31,7 +34,6 @@ nsis:
 
 # Linux configuration
 linux:
-  icon: "512x512.png"
   category: Education
   target:
     - "AppImage"
