@@ -2,7 +2,6 @@
   body::-webkit-scrollbar {
     width: 0.3em;
 }
-    *:focus {
 ::-webkit-scrollbar:horizontal {
   height: 0.3em;
 }
