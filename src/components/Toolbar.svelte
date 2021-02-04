@@ -62,13 +62,15 @@
 
     <div id="toolbar-minor" >
 
-        <a id="settings-anchor" class="btn " href="#/settings" title="Set your preferences [ , ]"><Settings24 /></a>
+        <button id="settings-anchor" class="btn " href="#/settings" title="Set your preferences [ , ]" onclick="window.location.href='#/settings'"><Settings24 /></button>
         <Fullscreen />
         <Zoom />
         <PageChange/>
         <SurahDropdown/>
         <Hyperlink/>
-        <Pin24 id="pin-toolbar" class="btn" title="Toggle auto-hide of this toolbar [enter]" on:click={toggleHide}/>
+        <button id="pin-toolbar" class="btn" title="Toggle auto-hide of this toolbar [enter]" on:click={toggleHide}>
+            <Pin24 />
+        </button>
 
     </div>
 
