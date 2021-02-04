@@ -46,8 +46,8 @@ input[type=range].slider::-webkit-slider-thumb {
   margin-top: -8.5px;
   width: 16px;
   height: 16px;
-  background: rgb(31, 31, 31);
-  border: 0;
+  background: rgba(255, 255, 255, 0.986);
+  border: 2px solid rgb(31, 31, 31);
   border-radius: 100px;
   cursor: pointer;
   -webkit-appearance: none;
