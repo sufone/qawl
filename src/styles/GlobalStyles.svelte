@@ -9,8 +9,7 @@ body::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
-        outline: none;
-    }
+       
     .btn, .btn-disabled {
         all: unset;
     }
