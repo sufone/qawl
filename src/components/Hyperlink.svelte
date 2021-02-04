@@ -36,5 +36,6 @@
 		document.getElementById("online-hyperlink").click()
 	})
 </script>
-
-<Launch24 id="online-hyperlink" title="Open online translation, recitation & tafsir [ q ]"  class="btn" on:click={open}/>
+<button on:click={open} id="online-hyperlink" class="btn"  title="Open online translation, recitation & tafsir [ q ]">
+	<Launch24 />
+</button>
