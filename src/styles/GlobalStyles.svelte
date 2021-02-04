@@ -1,8 +1,15 @@
 <style global>
-  ::-webkit-scrollbar {
-    display: none;
+  body::-webkit-scrollbar {
+    width: 0.3em;
 }
     *:focus {
+::-webkit-scrollbar:horizontal {
+  height: 0.3em;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
         outline: none;
     }
     .btn, .btn-disabled {
