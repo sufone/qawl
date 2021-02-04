@@ -4,6 +4,9 @@
 	import Mousetrap from 'mousetrap'
 	import CaretRight24 from 'carbon-icons-svelte/lib/CaretRight24'
 	import CaretLeft24 from 'carbon-icons-svelte/lib/CaretLeft24'
+	import ArrowLeft24 from 'carbon-icons-svelte/lib/ArrowLeft24'
+	import ArrowRight24 from 'carbon-icons-svelte/lib/ArrowRight24'
+
 
 	function increment(){
 		inputPage.update(p => p += 2)
@@ -53,9 +56,13 @@
 
 <!-- To prevent button after max page -->
 {#if $inputPage < 603}
-<CaretLeft24 id="next-page" title="Next page [ a ]" class="btn" on:click={increment} />
+<button  id="next-page" title="Next page [ a ]" class="btn" on:click={increment} >
+	<ArrowLeft24 />
+</button>
 {:else}
-<CaretLeft24 style="fill: gray" title="Cannot go forward; this is the last page" class="btn-disabled" />
+<button title="Cannot go forward; this is the last page" class="btn-disabled" >
+	<CaretLeft24 style="fill: gray"  />
+</button>
 {/if}
 
 <input class="btn" on:keyup={checkDigits} type="number" name="pageNumberInput" bind:value={page}
@@ -63,15 +70,22 @@ id="pageNumberInput" max="604" min="1" title="Directly go to page…">
 
 <!-- To prevent button before min page -->
 {#if $inputPage > 2}
-<CaretRight24 id="previous-page" title="Previous page [ d ]" class="btn" on:click={decrement} />
+<button  id="previous-page" title="Previous page [ d ]" class="btn" on:click={decrement} >
+	<ArrowRight24 />
+</button>
 {:else}
-<CaretRight24 style="fill: gray" title="Cannot go back; this is the last page" class="btn-disabled" />
+<button title="Cannot go back; this is the last page" class="btn-disabled"  >
+	<CaretRight24 style="fill: gray"  />
+</button>
 {/if}
 
 </div>
 
 
 <style>
+	#pageNumberInput {
+		padding: 0.5rem 0.5rem;
+	}
 	div {
 		display: flex;
 		flex-direction: row;
