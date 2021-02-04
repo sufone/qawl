@@ -6,6 +6,8 @@
     import Zoom from './Zoom.svelte'
     import {onMount} from 'svelte'
     import Mousetrap from 'mousetrap'
+    import Settings24 from 'carbon-icons-svelte/lib/Settings24'
+    import Pin24 from 'carbon-icons-svelte/lib/Pin24'
 
     function onInactive(ms, cb) {
         var wait = setTimeout(cb, ms);
@@ -59,12 +61,12 @@
 
     <div id="toolbar-minor" >
 
-        <a id="settings-anchor" class="btn " href="#/settings" title="Set your preferences [ , ]">Settings</a>
+        <a id="settings-anchor" class="btn " href="#/settings" title="Set your preferences [ , ]"><Settings24 /></a>
         <Zoom />
         <PageChange/>
         <SurahDropdown/>
         <Hyperlink/>
-        <button id="pin-toolbar" title="Toggle auto-hide of this toolbar [enter]" class="btn" on:click={toggleHide}>Pin</button>
+        <Pin24 id="pin-toolbar" class="btn" title="Toggle auto-hide of this toolbar [enter]" on:click={toggleHide}/>
 
     </div>
 

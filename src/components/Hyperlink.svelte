@@ -2,6 +2,7 @@
 	import { currentSurah } from "../stores/page";
 	import {hyperlinkProvider} from "../stores/settings"
 	import Mousetrap from 'mousetrap'
+	import Launch24 from 'carbon-icons-svelte/lib/Launch24'
 
 	let suffix = "/"
 
@@ -36,4 +37,4 @@
 	})
 </script>
 
-<button id="online-hyperlink" title="Open online translation, recitation & tafsir [ q ]" class="btn" on:click={open}>More</button>
+<Launch24 id="online-hyperlink" title="Open online translation, recitation & tafsir [ q ]"  class="btn" on:click={open}/>

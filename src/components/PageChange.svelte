@@ -2,6 +2,8 @@
 	import {inputPage} from '../stores/page.js'
 	import {onMount} from 'svelte'
 	import Mousetrap from 'mousetrap'
+	import CaretRight24 from 'carbon-icons-svelte/lib/CaretRight24'
+	import CaretLeft24 from 'carbon-icons-svelte/lib/CaretLeft24'
 
 	function increment(){
 		inputPage.update(p => p += 2)
@@ -51,9 +53,9 @@
 
 <!-- To prevent button after max page -->
 {#if $inputPage < 603}
-<button id="next-page" title="Next page [ a ]" class="btn" on:click={increment}>←</button>
+<CaretLeft24 id="next-page" title="Next page [ a ]" class="btn" on:click={increment} />
 {:else}
-<button title="Cannot go forward; this is the last page" class="btn-disabled" disabled>←</button>
+<CaretLeft24 style="fill: gray" title="Cannot go forward; this is the last page" class="btn-disabled" />
 {/if}
 
 <input class="btn" on:keyup={checkDigits} type="number" name="pageNumberInput" bind:value={page}
@@ -61,9 +63,9 @@ id="pageNumberInput" max="604" min="1" title="Directly go to page…">
 
 <!-- To prevent button before min page -->
 {#if $inputPage > 2}
-<button id="previous-page" title="Previous page [ d ]" class="btn" on:click={decrement}>→</button>
+<CaretRight24 id="previous-page" title="Previous page [ d ]" class="btn" on:click={decrement} />
 {:else}
-<button title="Cannot go back; this is the first page" class="btn-disabled" disabled>→</button>
+<CaretRight24 style="fill: gray" title="Cannot go back; this is the last page" class="btn-disabled" />
 {/if}
 
 </div>

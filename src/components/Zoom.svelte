@@ -2,6 +2,8 @@
 	import {zoomStore} from '../stores/settings.js'
 	import {onMount} from 'svelte'
 	import Mousetrap from 'mousetrap'
+    import ZoomIn24 from 'carbon-icons-svelte/lib/ZoomIn24'
+    import ZoomOut24 from 'carbon-icons-svelte/lib/ZoomOut24'
 
 	let zoomVal
 
@@ -49,9 +51,9 @@
 </script>
 
 <div>
-	<button id="zoom-in" title="Zoom in [ = ]" class="btn" on:click={zoomIn}>+</button>
+	<ZoomIn24 id="zoom-in" title="Zoom in [ = ]" class="btn" on:click={zoomIn} />
 	<input title="Drag to zoom" class="slider" id="slider" type=range bind:value={zoomVal} min=40 max=150>
-	<button id="zoom-out" title="Zoom out [ - ]" class="btn" on:click={zoomOut}>-</button>
+	<ZoomOut24 id="zoom-out" title="Zoom out [ - ]" class="btn" on:click={zoomOut} />
 </div>
 
 
