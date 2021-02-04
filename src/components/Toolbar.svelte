@@ -8,6 +8,7 @@
     import Mousetrap from 'mousetrap'
     import Settings24 from 'carbon-icons-svelte/lib/Settings24'
     import Pin24 from 'carbon-icons-svelte/lib/Pin24'
+    import Fullscreen from './Fullscreen.svelte';
 
     function onInactive(ms, cb) {
         var wait = setTimeout(cb, ms);
@@ -62,6 +63,7 @@
     <div id="toolbar-minor" >
 
         <a id="settings-anchor" class="btn " href="#/settings" title="Set your preferences [ , ]"><Settings24 /></a>
+        <Fullscreen />
         <Zoom />
         <PageChange/>
         <SurahDropdown/>
