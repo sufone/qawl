@@ -56,30 +56,44 @@
 
 </script>
 
-<div id="toolbar-main" class="acrylic" >
+<div style='-webkit-app-region: drag'>
 
-    <NumberSlider/>
+    <div id="toolbar-main" class="acrylic" style='-webkit-app-region: drag' >
 
-    <div id="toolbar-minor" >
+        <NumberSlider/>
 
-        <button id="settings-anchor" class="btn " href="#/settings" title="Set your preferences [ , ]" onclick="window.location.href='#/settings'"><Settings24 /></button>
-        <Fullscreen />
-        <Zoom />
-        <PageChange/>
-        <SurahDropdown/>
-        <Hyperlink/>
-        <button id="pin-toolbar" class="btn" title="Toggle auto-hide of this toolbar [enter]" on:click={toggleHide}>
-            <Pin24 />
-        </button>
+        <div id="toolbar-minor" >
+
+            <button id="settings-anchor" class="btn" href="#/settings" title="Set your preferences [ , ]" onclick="window.location.href='#/settings'"><Settings24 /></button>
+            <Fullscreen />
+            <Zoom />
+            <PageChange/>
+            <SurahDropdown/>
+            <Hyperlink/>
+            <button id="pin-toolbar" class="btn" title="Toggle auto-hide of this toolbar [enter]" on:click={toggleHide}>
+                <Pin24 />
+            </button>
+            <button id="drag-button" class="btn drag" title="Drag the Toolbar" on:click={toggleHide}>
+                ::
+            </button>
+
+        </div>
+
 
     </div>
-
-
+    
 </div>
 
 <style>
     /* see .btn styles in GlobalStyles.svelte */
 
+    button.drag {
+        padding-top: 0;
+    }
+
+    .btn {
+        -webkit-app-region: no-drag;
+    }
     div#toolbar-main {
         display: flex;
         flex-direction: column;
