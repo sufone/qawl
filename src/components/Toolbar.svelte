@@ -1,132 +1,140 @@
 <script>
-    import SurahDropdown from './SurahDropdown.svelte'
-    import PageChange from './PageChange.svelte'
-    import NumberSlider from './NumberSlider.svelte'
-    import Hyperlink from './Hyperlink.svelte'
-    import Zoom from './Zoom.svelte'
-    import {onMount} from 'svelte'
-    import Mousetrap from 'mousetrap'
-    import Settings24 from 'carbon-icons-svelte/lib/Settings24'
-    import Pin24 from 'carbon-icons-svelte/lib/Pin24'
-    import Fullscreen from './Fullscreen.svelte';
+	import { onMount } from "svelte";
+	import Mousetrap from "mousetrap";
+	import Settings24 from "carbon-icons-svelte/lib/Settings24";
+	import Pin24 from "carbon-icons-svelte/lib/Pin24";
+	import PinFilled24 from "carbon-icons-svelte/lib/PinFilled24";
+	import { pinToolbar } from "../stores/settings.js";
+	import SurahDropdown from "./SurahDropdown.svelte";
+	import PageChange from "./PageChange.svelte";
+	import NumberSlider from "./NumberSlider.svelte";
+	import Hyperlink from "./Hyperlink.svelte";
+	import Zoom from "./Zoom.svelte";
+	import Fullscreen from "./Fullscreen.svelte";
 
-    function onInactive(ms, cb) {
-        var wait = setTimeout(cb, ms);
-        document.onmousemove = document.mousedown = document.mouseup = document.onkeydown =
-        document.onkeyup = document.focus = document.ontouchstart = document.onclick =
-        document.onkeypress = function () {
-            clearTimeout(wait);
-            document.getElementById("toolbar-main").style.opacity = 1;
-            document.body.style.cursor = "pointer";
-            wait = setTimeout(cb, ms);
-        };
-    }
+	function onInactive(ms, cb) {
+		var wait = setTimeout(cb, ms);
+		document.onmousemove =
+			document.mousedown =
+			document.mouseup =
+			document.onkeydown =
+			document.onkeyup =
+			document.focus =
+			document.ontouchstart =
+			document.onclick =
+			document.onkeypress =
+				function () {
+					clearTimeout(wait);
+					document.getElementById("toolbar-main").style.opacity = 1;
+					document.body.style.cursor = "pointer";
+					wait = setTimeout(cb, ms);
+				};
+	}
 
-    onInactive(3000, function () {
-        console.log(readyToShow)
-        if (readyToShow === true) {
-            return;
-        } else if (neverHide === false) {
-            document.getElementById("toolbar-main").style.opacity = 0;
-            document.body.style.cursor = "none";
-        }
-    });
+	onInactive(3000, function () {
+		console.log(readyToShow);
+		if (readyToShow === true) {
+			return;
+		} else if (neverHide === false) {
+			document.getElementById("toolbar-main").style.opacity = 0;
+			document.body.style.cursor = "none";
+		}
+	});
 
-    let readyToShow; //so if mouse is resting on footer, it'll keep showing
+	let readyToShow; //so if mouse is resting on footer, it'll keep showing
 
-    onMount(async () => {
-        let toolbar = document.getElementById("toolbar-main")
-        toolbar.addEventListener("mouseover", function() {readyToShow=true;});
-        toolbar.addEventListener("mouseout", function() {readyToShow=false;});
-    });
+	onMount(async () => {
+		let toolbar = document.getElementById("toolbar-main");
+		toolbar.addEventListener("mouseover", function () {
+			readyToShow = true;
+		});
+		toolbar.addEventListener("mouseout", function () {
+			readyToShow = false;
+		});
+	});
 
-    let neverHide = false //maybe this should be a setting to set permanently?
+	let neverHide = $pinToolbar;
 
-    function toggleHide() {
-        neverHide = !neverHide
-        console.log(neverHide)
-    }
+	function togglePin() {
+		neverHide = !neverHide;
+		pinToolbar.set(neverHide);
+	}
 
-    Mousetrap.bind(",", () => {
-        document.getElementById('settings-anchor').click()
-    })
-    Mousetrap.bind("enter", () => {
-        document.getElementById('pin-toolbar').click()
-    })
-
+	Mousetrap.bind(",", () => {
+		document.getElementById("settings-anchor").click();
+	});
+	Mousetrap.bind("enter", () => {
+		document.getElementById("pin-toolbar").click();
+	});
 </script>
 
-<div id="toolbar-main" class="acrylic" >
+<div id="toolbar-main" class="acrylic">
+	<NumberSlider />
 
-    <NumberSlider/>
-
-    <div id="toolbar-minor" >
-
-        <button id="settings-anchor" class="btn " href="#/settings" title="Set your preferences [ , ]" onclick="window.location.href='#/settings'"><Settings24 /></button>
-        <Fullscreen />
-        <Zoom />
-        <PageChange/>
-        <SurahDropdown/>
-        <Hyperlink/>
-        <button id="pin-toolbar" class="btn" title="Toggle auto-hide of this toolbar [enter]" on:click={toggleHide}>
-            <Pin24 />
-        </button>
-
-    </div>
-
-
+	<div id="toolbar-minor">
+		<button
+			id="settings-anchor"
+			class="btn "
+			href="#/settings"
+			title="Set your preferences [ , ]"
+			onclick="window.location.href='#/settings'"><Settings24 /></button
+		>
+		<Fullscreen />
+		<Zoom />
+		<PageChange />
+		<SurahDropdown />
+		<Hyperlink />
+		<button
+			id="pin-toolbar"
+			class="btn"
+			title="Toggle auto-hide of this toolbar [enter]"
+			on:click={togglePin}
+		>
+			{#if neverHide}
+				<PinFilled24 />
+			{:else}
+				<Pin24 />
+			{/if}
+		</button>
+	</div>
 </div>
 
 <style>
-    /* see .btn styles in GlobalStyles.svelte */
+	/* see .btn styles in GlobalStyles.svelte */
 
-    div#toolbar-main {
-        display: flex;
-        flex-direction: column;
+	div#toolbar-main {
+		display: flex;
+		flex-direction: column;
 
-        cursor: default;
-        display: flex;
-        justify-content: space-between;
-        width: 70%;
-        min-width: 906px;
-        margin-left: 15%;
-        margin-bottom: 1.5%;
-        position: fixed;
-        bottom: 0;
-        height: 7%;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-        transition: opacity 300ms ease;
+		cursor: default;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		position: fixed;
+		bottom: 0;
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
+			0 6px 6px rgba(0, 0, 0, 0.23);
+		padding: 0.5rem 0.5rem 0;
+		transition: opacity 300ms ease;
 
-        z-index: 2;
-        /* padding-top: 12px; */
-        /* padding: 5px; */
-        /* border-radius: 4px; */
-    }
-    div#toolbar-minor {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 0 0 0 0;
-        margin: 0 0 25px 0;
-        
-    }
-    a {
-        text-decoration: none;
-    }
-    a:hover {
-        cursor: default;
-    }
-    .acrylic {
-        backdrop-filter: blur(10px);
+		z-index: 2;
+	}
+	div#toolbar-minor {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
+	.acrylic {
+		backdrop-filter: blur(10px);
 
-        /* Exclusion blend */
-        background-blend-mode: exclusion;
+		/* Exclusion blend */
+		background-blend-mode: exclusion;
 
-        /* Color/tint overlay + Opacity */
-        background: rgba(255, 255, 255, 0.4);
+		/* Color/tint overlay + Opacity */
+		background: rgba(255, 255, 255, 0.4);
 
-        /* Tiled noise texture */
-        background-image: url(data:image/png;base64,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);
-
-    }
+		/* Tiled noise texture */
+		background-image: url(data:image/png;base64,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);
+	}
 </style>
