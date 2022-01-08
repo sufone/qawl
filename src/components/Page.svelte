@@ -1,5 +1,7 @@
 <script>
 	import { inputPage } from "../stores/page.js";
+	import QuranPage from "./QuranPage.svelte";
+
 	console.log("inputpage from page.svelte: " + $inputPage);
 
 	let left, right;
@@ -21,14 +23,8 @@
 </script>
 
 <div class="quran-wrapper" style="--zoom: {zoom}">
-	<img
-		alt="Page {left} of the Madina mushaf"
-		src="../public/mushaf/{left}.png"
-	/>
-	<img
-		alt="Page {right} of the Madina mushaf"
-		src="../public/mushaf/{right}.png"
-	/>
+	<QuranPage page={left} />
+	<QuranPage page={right} />
 </div>
 
 <style>
@@ -42,11 +38,5 @@
 		margin-right: auto;
 		margin-left: auto;
 		transition: max-width 100ms ease;
-		background-color: transparent;
-	}
-	img {
-		max-width: 50%;
-		height: auto;
-		/* filter: invert(1) */
 	}
 </style>

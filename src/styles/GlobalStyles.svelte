@@ -4,14 +4,17 @@
 	}
 
 	*,
-	*:before,
-	*:after {
+	*::before,
+	*::after {
 		box-sizing: inherit;
 	}
 
 	body {
 		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 			Arial, sans-serif;
+	}
+	body,
+	p {
 		margin: 0;
 		padding: 0;
 	}
@@ -42,7 +45,7 @@
 		/* background: none; */
 		color: #000;
 		border: none;
-		border-radius: .25rem;
+		border-radius: 0.25rem;
 		min-width: 2rem;
 		min-height: 2rem;
 		text-align: center;
@@ -64,7 +67,7 @@
 		outline: none;
 	}
 	input[type="range"].slider::-webkit-slider-runnable-track {
-		background: rgba(255, 255, 255, 0);
+		background: transparent;
 		border: 0.1px solid rgba(0, 0, 0, 0.6);
 		width: 100%;
 		height: 0px;
@@ -76,7 +79,7 @@
 		height: 16px;
 		background: rgba(255, 255, 255, 0.986);
 		border: 2px solid rgb(31, 31, 31);
-		border-radius: 100px;
+		border-radius: 50%;
 		cursor: pointer;
 		-webkit-appearance: none;
 	}

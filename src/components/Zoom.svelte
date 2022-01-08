@@ -68,6 +68,7 @@
 		bind:value={zoomVal}
 		min="40"
 		max="150"
+		step="5"
 	/>
 	<button id="zoom-out" title="Zoom out [ - ]" class="btn" on:click={zoomOut}>
 		<ZoomOut24 />
@@ -84,7 +85,7 @@
 		justify-content: center;
 	}
 
-	@media only screen and (max-width: 768px) {
+	@media only screen and (max-width: 782px) {
 		.slider {
 			display: none;
 		}

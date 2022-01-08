@@ -124,7 +124,7 @@
 		margin: 0;
 	}
 
-	@media only screen and (max-width: 620px) {
+	@media only screen and (max-width: 648px) {
 		input {
 			display: none;
 		}
