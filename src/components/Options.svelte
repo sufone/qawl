@@ -1,12 +1,12 @@
 <script>
-	import { hyperlinkProvider } from "../stores/settings"
-	import Mousetrap from 'mousetrap'
+	import { hyperlinkProvider } from "../stores/settings";
+	import Mousetrap from "mousetrap";
 
-	const appVersion = window.remote.require('electron').app.getVersion()
+	const appVersion = window.remote.require("electron").app.getVersion();
 
 	Mousetrap.bind(",", () => {
-        document.getElementById('reading-anchor').click();
-    })
+		document.getElementById("reading-anchor").click();
+	});
 </script>
 
 <div id="container">
@@ -15,43 +15,68 @@
 	<p>Choose your online reference provider:</p>
 
 	<select bind:value={$hyperlinkProvider}>
-		<option disabled> - English - </option>
-		<option value="https://quran.com/">Quran.com</option>
-		<option value="http://corpus.quran.com/wordbyword.jsp?chapter=">Quran Corpus - Ayah Analysis</option>
-		<option value="https://www.altafsir.com/Tafasir.asp?tMadhNo=1&tTafsirNo=86&tSoraNo=">Altafsir.org - Asbab al-Nuzul</option>
-		<option disabled> - Arabic - </option>
-		<option value="https://tafsir.app/">Tafsir.app</option>
-		<option value="https://www.altafsir.com/Tafasir.asp?tMadhNo=1&tTafsirNo=7&tSoraNo=">Altafsir.org - Ibn Katheer</option>
+		<optgroup label="English">
+			<option value="https://quran.com/">Quran.com</option>
+			<option value="http://corpus.quran.com/wordbyword.jsp?chapter="
+				>Quran Corpus - Ayah Analysis</option
+			>
+			<option
+				value="https://www.altafsir.com/Tafasir.asp?tMadhNo=1&tTafsirNo=86&tSoraNo="
+				>Altafsir.org - Asbab al-Nuzul</option
+			>
+		</optgroup>
+		<optgroup label="Arabic">
+			<option value="https://tafsir.app/">Tafsir.app</option>
+			<option
+				value="https://www.altafsir.com/Tafasir.asp?tMadhNo=1&tTafsirNo=7&tSoraNo="
+				>Altafsir.org - Ibn Katheer</option
+			>
+		</optgroup>
 	</select>
 
-	<br><br><br><br>
+	<br /><br /><br /><br />
 	<h2>Information</h2>
-	<p>You are now running Qawl v{appVersion}. This app will automatically check for updates when you launch it, and notify you. Just in case, you can <a target="_blank" href="https://github.com/sufone/qawl/releases">check for updates manually on the download page.</a></p>
+	<p>
+		You are now running Qawl v{appVersion}. This app will automatically
+		check for updates when you launch it, and notify you. Just in case, you
+		can
+		<a target="_blank" href="https://github.com/sufone/qawl/releases"
+			>check for updates manually on the download page.</a
+		>
+	</p>
 
-	<p>Please contact <a href="mailto:navedcoded@gmail.com">navedcoded@gmail.com</a> for support, feedback and comments.</p>
+	<p>
+		Please contact <a href="mailto:navedcoded@gmail.com"
+			>navedcoded@gmail.com</a
+		> for support, feedback and comments.
+	</p>
 
-	<p><a target="_blank" href="https://github.com/sufone/qawl">Qawl is an <em>open-source, community project</em>.</a></p>
+	<p>
+		<a target="_blank" href="https://github.com/sufone/qawl"
+			>Qawl is an <em>open-source, community project</em>.</a
+		>
+	</p>
 
-	<br><br>
-	<p ><a href="#/" id="reading-anchor" title="Return to the Quran reading screen [ , ]">Back to Quran</a></p>
-
+	<br /><br />
+	<p>
+		<a
+			href="#/"
+			id="reading-anchor"
+			title="Return to the Quran reading screen [ , ]">Back to Quran</a
+		>
+	</p>
 </div>
 
-
 <style>
-	* {
-		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-	}
 	#container {
-		padding-left: 100px;
-		padding-top: 100px;
 		display: flex;
 		flex-direction: column;
 		justify-items: center;
+		padding: 4rem;
+		margin: 0 auto;
 		max-width: 60vw;
 	}
 	#reading-anchor {
-		/* padding-top: 200px; */
 		color: red;
 	}
 </style>
