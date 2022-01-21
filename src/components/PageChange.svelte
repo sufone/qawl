@@ -1,9 +1,11 @@
 <script>
-	import { inputPage } from "../stores/page.js";
-	import { onMount } from "svelte";
-	import Mousetrap from "mousetrap";
-	import ArrowLeft24 from "carbon-icons-svelte/lib/ArrowLeft24";
-	import ArrowRight24 from "carbon-icons-svelte/lib/ArrowRight24";
+	import { onMount } from 'svelte';
+	import Mousetrap from 'mousetrap';
+	import ArrowLeft20 from 'carbon-icons-svelte/lib/ArrowLeft20';
+	import ArrowRight20 from 'carbon-icons-svelte/lib/ArrowRight20';
+	import { inputPage } from '../stores/page.js';
+	import tooltip from '../tooltip';
+	import ToolButton from './ToolButton.svelte';
 
 	function increment() {
 		inputPage.update((p) => (p += 2));
@@ -35,48 +37,38 @@
 	}
 
 	onMount(() => {
-		inputElem = document.getElementById("pageNumberInput");
+		inputElem = document.getElementById('pageNumberInput');
 
 		//KEYBOARD SHORTCUTS
 		Mousetrap.bind(
-			["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"],
+			['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'],
 			function () {
-				inputElem.value = "";
+				inputElem.value = '';
 				inputElem.focus();
 			}
 		);
 	});
 
-	Mousetrap.bind("a", () => {
-		document.getElementById("next-page").click();
+	Mousetrap.bind('a', () => {
+		document.getElementById('next-page').click();
 	});
-	Mousetrap.bind("d", () => {
-		document.getElementById("previous-page").click();
+	Mousetrap.bind('d', () => {
+		document.getElementById('previous-page').click();
 	});
 </script>
 
 <div>
-	<!-- To prevent button after max page -->
-	{#if $inputPage < 603}
-		<button
-			id="next-page"
-			title="Next page [ a ]"
-			class="btn"
-			on:click={increment}
-		>
-			<ArrowLeft24 />
-		</button>
-	{:else}
-		<button
-			title="Cannot go forward; this is the last page"
-			class="btn-disabled"
-		>
-			<ArrowLeft24 style="fill: gray" />
-		</button>
-	{/if}
+	<ToolButton
+		id="next-page"
+		title="Next page [ a ]"
+		on:click={increment}
+		disabled={$inputPage >= 604}
+	>
+		<ArrowLeft20 />
+	</ToolButton>
 
 	<input
-		class="btn"
+		use:tooltip
 		on:keyup={checkDigits}
 		type="number"
 		name="pageNumberInput"
@@ -84,27 +76,17 @@
 		id="pageNumberInput"
 		max="604"
 		min="1"
-		title="Directly go to page…"
+		title="Jump to page"
 	/>
 
-	<!-- To prevent button before min page -->
-	{#if $inputPage > 2}
-		<button
-			id="previous-page"
-			title="Previous page [ d ]"
-			class="btn"
-			on:click={decrement}
-		>
-			<ArrowRight24 />
-		</button>
-	{:else}
-		<button
-			title="Cannot go back; this is the last page"
-			class="btn-disabled"
-		>
-			<ArrowRight24 style="fill: gray" />
-		</button>
-	{/if}
+	<ToolButton
+		id="previous-page"
+		title="Previous page [ d ]"
+		on:click={decrement}
+		disabled={$inputPage <= 1}
+	>
+		<ArrowRight20 />
+	</ToolButton>
 </div>
 
 <style>
@@ -113,15 +95,24 @@
 		flex-direction: row;
 	}
 	input {
-		text-align: center;
 		background-color: transparent;
-		color: black;
 		border: none;
+		border-radius: 0.25rem;
+		color: black;
+		font-size: 1rem;
+		outline: none;
+		text-align: center;
 	}
 	input::-webkit-outer-spin-button,
 	input::-webkit-inner-spin-button {
 		-webkit-appearance: none;
 		margin: 0;
+	}
+	input:focus {
+		background-color: rgba(0, 0, 0, 0.05);
+	}
+	input:hover {
+		background-color: rgba(0, 0, 0, 0.096);
 	}
 
 	@media only screen and (max-width: 648px) {
