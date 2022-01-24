@@ -1,9 +1,11 @@
 <script>
-	import { zoomStore } from "../stores/settings.js";
-	import { onMount } from "svelte";
-	import Mousetrap from "mousetrap";
-	import ZoomIn24 from "carbon-icons-svelte/lib/ZoomIn24";
-	import ZoomOut24 from "carbon-icons-svelte/lib/ZoomOut24";
+	import { onMount } from 'svelte';
+	import Mousetrap from 'mousetrap';
+	import ZoomIn20 from 'carbon-icons-svelte/lib/ZoomIn20';
+	import ZoomOut20 from 'carbon-icons-svelte/lib/ZoomOut20';
+	import { zoomStore } from '../stores/settings.js';
+	import ToolButton from './ToolButton.svelte';
+	import tooltip from '../tooltip';
 
 	let zoomVal;
 
@@ -19,11 +21,11 @@
 		zoomVal = 150;
 	}
 	$: if (zoomVal > 100 && zoomVal <= 150) {
-		document.body.style.width = zoomVal + "%";
+		document.body.style.width = zoomVal + '%';
 	}
 
 	$: onMount(() => {
-		window.addEventListener("wheel", function (e) {
+		window.addEventListener('wheel', function (e) {
 			if (e.ctrlKey == true) {
 				//all corresponds to touchpad pinch in/out or ctrl+scroll
 				if (e.deltaY < 0 && zoomVal < 149) {
@@ -48,19 +50,20 @@
 		}
 	}
 
-	Mousetrap.bind("=", () => {
-		document.getElementById("zoom-in").click();
+	Mousetrap.bind('=', () => {
+		document.getElementById('zoom-in').click();
 	});
-	Mousetrap.bind("-", () => {
-		document.getElementById("zoom-out").click();
+	Mousetrap.bind('-', () => {
+		document.getElementById('zoom-out').click();
 	});
 </script>
 
 <div>
-	<button id="zoom-in" title="Zoom in [ = ]" class="btn" on:click={zoomIn}>
-		<ZoomIn24 />
-	</button>
+	<ToolButton id="zoom-in" title="Zoom in [ = ]" on:click={zoomIn}>
+		<ZoomIn20 />
+	</ToolButton>
 	<input
+		use:tooltip
 		title="Drag to zoom"
 		class="slider"
 		id="slider"
@@ -70,9 +73,9 @@
 		max="150"
 		step="5"
 	/>
-	<button id="zoom-out" title="Zoom out [ - ]" class="btn" on:click={zoomOut}>
-		<ZoomOut24 />
-	</button>
+	<ToolButton id="zoom-out" title="Zoom out [ - ]" on:click={zoomOut}>
+		<ZoomOut20 />
+	</ToolButton>
 </div>
 
 <style>

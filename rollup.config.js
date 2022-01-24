@@ -26,7 +26,7 @@ export default {
 			// a separate file — better for performance
 			preprocess: autoPreprocess({
 				scss: {
-				  includePaths: ['src'],
+				  includePaths: ['src', 'node_modules'],
 				},
 				postcss: {
 				  plugins: [require('autoprefixer')],

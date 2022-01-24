@@ -21,7 +21,8 @@
     "electron-update-notification": "^0.1.0",
     "mousetrap": "^1.6.5",
     "nucleus-nodejs": "^3.0.6",
-    "svelte-persistent-store": "^0.1.4"
+    "svelte-persistent-store": "^0.1.4",
+    "tippy.js": "^6.3.7"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.3",

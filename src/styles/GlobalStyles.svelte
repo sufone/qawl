@@ -1,4 +1,4 @@
-<style global>
+<style lang="scss" global>
 	html {
 		box-sizing: border-box;
 	}
@@ -10,7 +10,7 @@
 	}
 
 	body {
-		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 			Arial, sans-serif;
 	}
 	body,
@@ -30,51 +30,20 @@
 		outline: 1px solid slategrey;
 	}
 
-	.btn,
-	.btn-disabled {
-		all: unset;
-	}
-	.btn {
-		cursor: pointer;
-	}
-	.btn,
-	.btn-disabled {
-		font-size: 1.125rem;
-		padding: 0.5rem;
-		background-color: rgba(0, 0, 0, 0);
-		/* background: none; */
-		color: #000;
-		border: none;
-		border-radius: 0.25rem;
-		min-width: 2rem;
-		min-height: 2rem;
-		text-align: center;
-		transition: all 200ms ease;
-	}
-	.btn:hover {
-		background-color: rgba(0, 0, 0, 0.096);
-	}
-	.btn-disabled {
-		color: rgb(143, 143, 143);
-		cursor: default;
-	}
-
-	input[type="range"].slider {
+	input[type='range'].slider {
 		background-color: transparent;
 		-webkit-appearance: none;
-	}
-	input[type="range"].slider:focus {
 		outline: none;
 	}
-	input[type="range"].slider::-webkit-slider-runnable-track {
-		background: transparent;
-		border: 0.1px solid rgba(0, 0, 0, 0.6);
+	input[type='range'].slider::-webkit-slider-runnable-track {
+		background: rgba(0, 0, 0, 0.25);
+		border-radius: 2px;
 		width: 100%;
-		height: 0px;
+		height: 4px;
 		cursor: pointer;
 	}
-	input[type="range"].slider::-webkit-slider-thumb {
-		margin-top: -8.5px;
+	input[type='range'].slider::-webkit-slider-thumb {
+		margin-top: -6.5px;
 		width: 16px;
 		height: 16px;
 		background: rgba(255, 255, 255, 0.986);
@@ -83,7 +52,14 @@
 		cursor: pointer;
 		-webkit-appearance: none;
 	}
-	input[type="range"].slider:focus::-webkit-slider-runnable-track {
-		background: #ffffff;
+	input[type='range'].slider:focus::-webkit-slider-runnable-track {
+		background: rgba(0, 0, 0, 0.3);
 	}
+	input[type='range'].slider:focus::-webkit-slider-thumb {
+		box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+	}
+
+	@import '../../node_modules/tippy.js/dist/tippy';
+	@import '../../node_modules/tippy.js/themes/light';
+	@import '../../node_modules/tippy.js/animations/shift-away-subtle';
 </style>

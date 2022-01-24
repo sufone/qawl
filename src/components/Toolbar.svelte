@@ -1,15 +1,16 @@
 <script>
-	import Mousetrap from "mousetrap";
-	import Settings24 from "carbon-icons-svelte/lib/Settings24";
-	import Pin24 from "carbon-icons-svelte/lib/Pin24";
-	import PinFilled24 from "carbon-icons-svelte/lib/PinFilled24";
-	import { pinToolbar } from "../stores/settings.js";
-	import SurahDropdown from "./SurahDropdown.svelte";
-	import PageChange from "./PageChange.svelte";
-	import NumberSlider from "./NumberSlider.svelte";
-	import Hyperlink from "./Hyperlink.svelte";
-	import Zoom from "./Zoom.svelte";
-	import Fullscreen from "./Fullscreen.svelte";
+	import Mousetrap from 'mousetrap';
+	import Settings20 from 'carbon-icons-svelte/lib/Settings20';
+	import Pin20 from 'carbon-icons-svelte/lib/Pin20';
+	import PinFilled20 from 'carbon-icons-svelte/lib/PinFilled20';
+	import { pinToolbar } from '../stores/settings.js';
+	import ToolButton from './ToolButton.svelte';
+	import SurahDropdown from './SurahDropdown.svelte';
+	import PageChange from './PageChange.svelte';
+	import NumberSlider from './NumberSlider.svelte';
+	import Hyperlink from './Hyperlink.svelte';
+	import Zoom from './Zoom.svelte';
+	import Fullscreen from './Fullscreen.svelte';
 
 	function onInactive(ms, cb) {
 		var wait = setTimeout(cb, ms);
@@ -47,11 +48,11 @@
 		pinToolbar.set(neverHide);
 	}
 
-	Mousetrap.bind(",", () => {
-		document.getElementById("settings-anchor").click();
+	Mousetrap.bind(',', () => {
+		document.getElementById('settings-anchor').click();
 	});
-	Mousetrap.bind("enter", () => {
-		document.getElementById("pin-toolbar").click();
+	Mousetrap.bind('enter', () => {
+		document.getElementById('pin-toolbar').click();
 	});
 </script>
 
@@ -65,38 +66,37 @@
 	<NumberSlider />
 
 	<div id="toolbar-minor">
-		<button
+		<ToolButton
 			id="settings-anchor"
-			class="btn "
 			href="#/settings"
-			title="Set your preferences [ , ]"
-			onclick="window.location.href='#/settings'"><Settings24 /></button
+			title="Settings [ , ]"
 		>
+			<Settings20 />
+		</ToolButton>
 		<Fullscreen />
+		<div class="spacer" />
 		<Zoom />
 		<PageChange />
 		<SurahDropdown />
 		<Hyperlink />
-		<button
+		<div class="spacer" />
+		<ToolButton
 			id="pin-toolbar"
-			class="btn"
-			title="Toggle auto-hide of this toolbar [enter]"
+			title="Pin toolbar [enter]"
 			on:click={togglePin}
 		>
 			{#if neverHide}
-				<PinFilled24 />
+				<PinFilled20 />
 			{:else}
-				<Pin24 />
+				<Pin20 />
 			{/if}
-		</button>
+		</ToolButton>
 	</div>
 </div>
 
 <style>
-	/* see .btn styles in GlobalStyles.svelte */
-
 	#toolbar-main {
-		border-radius: 0.5rem;
+		border-radius: 0.25rem;
 		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
 			0 6px 6px rgba(0, 0, 0, 0.23);
 		display: flex;
@@ -109,7 +109,7 @@
 		right: 0;
 		bottom: 0;
 		opacity: 1;
-		padding: 0.5rem 0.5rem 0;
+		padding: 0.5rem;
 		transition: opacity 300ms ease;
 		z-index: 2;
 	}
@@ -121,6 +121,9 @@
 		flex-direction: row;
 		align-items: center;
 		justify-content: center;
+	}
+	.spacer {
+		flex-grow: 1;
 	}
 	.acrylic {
 		backdrop-filter: blur(10px);
