@@ -15,7 +15,7 @@ Sorry this readme is bad, making it public quickly in case people want to contri
 Preparation
 1. Make sure you have `node` properly setup with a recent version (I use 14.x).
 2. Install `yarn`
-3. Also ensure you have node-gyp ((this guide can help[https://github.com/nodejs/node-gyp])
+3. Also ensure you have node-gyp ([this guide can help](https://github.com/nodejs/node-gyp))
 4. Clone this repo
 5. Run `yarn` to install dependencies
 
